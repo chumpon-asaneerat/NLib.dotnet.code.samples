@@ -13,8 +13,10 @@ NLib.Net code samples  #7
 NLib.Net code samples  #6
 - 
 
+[commited]
 NLib.Net code samples  #5
-- 
+- Add DragAndDropControl Sample project.
+- Add PanAndZoomImage Sample project.
 
 [commited]
 NLib.Net code samples  #4
