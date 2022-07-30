@@ -22,8 +22,9 @@ NLib.Net code samples  #4
 NLib.Net code samples  #3
 - 
 
+[commited]
 NLib.Net code samples  #2
-- 
+- Add DragAndDrop Sample project.
 
 [commited]
 NLib.Net code samples  #1

@@ -3,9 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8BAAAAF0-0153-4B8E-86A4-17215AF919D3}"
+	ProjectSection(SolutionItems) = preProject
+		history.txt = history.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Generals", "01.Generals", "{DE2F1303-7FF0-4694-9A29-C53603592404}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Wpf", "05.Wpf", "{B8F4930F-864B-432C-880F-A9A73F566B97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Behavior", "01.Behavior", "{8CBA93D0-C93E-451C-AB3A-3335794F800E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Resources", "02.Resources", "{47EC567A-7CA6-4024-88E2-9826BE35B4B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DragAndDrop,Sample", "05.Wpf\01.Behavior\01.DragAndDrop,Sample\01.DragAndDrop,Sample.csproj", "{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8CBA93D0-C93E-451C-AB3A-3335794F800E} = {B8F4930F-864B-432C-880F-A9A73F566B97}
+		{47EC567A-7CA6-4024-88E2-9826BE35B4B9} = {B8F4930F-864B-432C-880F-A9A73F566B97}
+		{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F} = {8CBA93D0-C93E-451C-AB3A-3335794F800E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11E84371-DE6B-4B78-BB92-B71EECC46630}
