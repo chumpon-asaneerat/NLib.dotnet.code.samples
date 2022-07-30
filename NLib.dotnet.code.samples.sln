@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Behavior", "01.Behavior"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Resources", "02.Resources", "{47EC567A-7CA6-4024-88E2-9826BE35B4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DragAndDrop,Sample", "05.Wpf\01.Behavior\01.DragAndDrop,Sample\01.DragAndDrop,Sample.csproj", "{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DragAndDrop.Sample", "05.Wpf\01.Behavior\01.DragAndDrop.Sample\01.DragAndDrop.Sample.csproj", "{3744BC3A-4E20-4C67-9DA4-944C9C3C2B3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

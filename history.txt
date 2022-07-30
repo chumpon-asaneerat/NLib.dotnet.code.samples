@@ -16,8 +16,10 @@ NLib.Net code samples  #6
 NLib.Net code samples  #5
 - 
 
+[commited]
 NLib.Net code samples  #4
-- 
+- DragAndDrop Sample project (rename)
+  - Fixed project configuration bug #2.
 
 [commited]
 NLib.Net code samples  #3
