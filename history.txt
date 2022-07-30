@@ -19,8 +19,10 @@ NLib.Net code samples  #5
 NLib.Net code samples  #4
 - 
 
+[commited]
 NLib.Net code samples  #3
-- 
+- DragAndDrop Sample project
+  - Fixed project configuration bug.
 
 [commited]
 NLib.Net code samples  #2
