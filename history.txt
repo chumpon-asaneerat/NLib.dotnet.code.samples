@@ -10,8 +10,10 @@ NLib.Net code samples  #8
 NLib.Net code samples  #7
 - 
 
+[commited]
 NLib.Net code samples  #6
-- 
+- PanAndZoomImage Sample project.
+  - Test Image aspect ratio #1
 
 [commited]
 NLib.Net code samples  #5
