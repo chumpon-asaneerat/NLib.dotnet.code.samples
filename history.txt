@@ -1,8 +1,10 @@
 NLib.Net code samples  #10
 - 
 
+[commited]
 NLib.Net code samples  #9
-- 
+- DragAndDrop.Sample project
+  - Test Drop #3. (final attemp still not work).
 
 [commited]
 NLib.Net code samples  #8

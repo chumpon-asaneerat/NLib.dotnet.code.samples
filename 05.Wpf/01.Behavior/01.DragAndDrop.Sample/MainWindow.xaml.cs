@@ -44,7 +44,7 @@ namespace DragAndDropSample
 
         #region Drag/Drop Handlers
 
-
+        /*
         /// <summary>
         /// We have to override this to allow drop functionality.
         /// </summary>
@@ -70,6 +70,7 @@ namespace DragAndDropSample
                 e.Effects = DragDropEffects.None;
             }
         }
+        */
         /// <summary>
         /// The drop activity on the textbox.
         /// </summary>
@@ -107,6 +108,19 @@ namespace DragAndDropSample
         private void cmdOpenExplorer_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("explorer.exe", @"C:\Users");
+        }
+
+        private void imgSource_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effects = DragDropEffects.Copy; // Okay
+            else
+                e.Effects = DragDropEffects.None; // Unknown data, ignore it
+        }
+
+        private void imgSource_DragOver(object sender, DragEventArgs e)
+        {
+
         }
     }
 }
