@@ -5,7 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Drag and Drop Sample" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Left" Width="500" Height="Auto" BorderBrush="Silver" BorderThickness="2" Margin="5">
+            <Image x:Name="imgSource" AllowDrop="True" 
+                   GiveFeedback="imgSource_GiveFeedback" 
+                   QueryContinueDrag="imgSource_QueryContinueDrag"
+                   DragEnter="imgSource_DragEnter"
+                   DragOver="imgSource_DragOver"
+                   DragLeave="imgSource_DragLeave"
+                   PreviewDrop="imgSource_PreviewDrop"
+                   Drop="imgSource_Drop"/>
+        </Border>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Source:" />
+            <TextBlock x:Name="txtDragSource" Text="" />
+        </StackPanel>
+    </DockPanel>
 </Window>

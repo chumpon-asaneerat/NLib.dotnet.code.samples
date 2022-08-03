@@ -7,8 +7,10 @@ NLib.Net code samples  #9
 NLib.Net code samples  #8
 - 
 
+[commited]
 NLib.Net code samples  #7
-- 
+- DragAndDrop.Sample project
+  - Test Drop #1.
 
 [commited]
 NLib.Net code samples  #6
