@@ -4,8 +4,10 @@ NLib.Net code samples  #10
 NLib.Net code samples  #9
 - 
 
+[commited]
 NLib.Net code samples  #8
-- 
+- DragAndDrop.Sample project
+  - Test Drop #2. (Seem imposible to drag file from explorer due to explorer privelage level is lower that application).
 
 [commited]
 NLib.Net code samples  #7

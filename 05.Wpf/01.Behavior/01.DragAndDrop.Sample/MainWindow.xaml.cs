@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,61 +37,76 @@ namespace DragAndDropSample
 
         #endregion
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //imgSource.AllowDrop = true;
+        }
+
         #region Drag/Drop Handlers
 
-        private void imgSource_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+
+        /// <summary>
+        /// We have to override this to allow drop functionality.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void imgSource_PreviewDragOver(object sender, DragEventArgs e)
         {
-
+            e.Handled = true;
         }
-
-        private void imgSource_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
+        /// <summary>
+        /// Evaluates the Data and performs the DragDropEffect
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void imgSource_PreviewDragEnter(object sender, DragEventArgs e)
         {
-
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effects = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effects = DragDropEffects.None;
+            }
         }
-
-        private void imgSource_DragEnter(object sender, DragEventArgs e)
-        {
-
-        }
-
-        private void imgSource_DragOver(object sender, DragEventArgs e)
-        {
-
-        }
-
-        private void imgSource_DragLeave(object sender, DragEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// The drop activity on the textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void imgSource_Drop(object sender, DragEventArgs e)
         {
-            /*
-            var droppedData = e.Data.GetData(typeof(Card)) as Card;
-            var target = (sender as ListBoxItem).DataContext as Card;
+            MessageBox.Show("Drop");
+            // Get data object
+            var dataObject = e.Data as DataObject;
 
-            int targetIndex = CardListControl.Items.IndexOf(target);
-
-            droppedData.Effect = null;
-            droppedData.RenderTransform = null;
-
-            Items.Remove(droppedData);
-            Items.Insert(targetIndex, droppedData);
-
-            // remove the visual feedback drag and drop item
-            if (this._dragdropWindow != null)
+            // Check for file list
+            if (dataObject.ContainsFileDropList())
             {
-                this._dragdropWindow.Close();
-                this._dragdropWindow = null;
+                /*
+                // Clear values
+                TextBox1.Text = string.Empty;
+
+                // Process file names
+                StringCollection fileNames = dataObject.GetFileDropList();
+                StringBuilder bd = new StringBuilder();
+                foreach (var fileName in fileNames)
+                {
+                    bd.Append(fileName + "\n");
+                }
+
+                // Set text
+                TextBox1.Text = bd.ToString();
+                */
             }
-            */
-        }
-
-        private void imgSource_PreviewDrop(object sender, DragEventArgs e)
-        {
-
         }
 
         #endregion
+
+        private void cmdOpenExplorer_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("explorer.exe", @"C:\Users");
+        }
     }
 }
