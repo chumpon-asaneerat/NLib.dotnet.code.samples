@@ -71,6 +71,49 @@ namespace DragAndDropSample
             }
         }
         */
+        private void imgSource_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+            if (e.Effects.HasFlag(DragDropEffects.Copy))
+            {
+                Mouse.SetCursor(Cursors.Cross);
+            }
+            else if (e.Effects.HasFlag(DragDropEffects.Move))
+            {
+                Mouse.SetCursor(Cursors.Pen);
+            }
+            else
+            {
+                Mouse.SetCursor(Cursors.No);
+            }
+            e.Handled = true;
+        }
+
+        private void imgSource_DragEnter(object sender, DragEventArgs e)
+        {
+            var data = e.Data;
+            if (null != data && data.GetDataPresent(DataFormats.FileDrop))
+            {
+                Console.WriteLine("File Drop");
+            }
+            else
+            {
+                Console.WriteLine("Other");
+            }
+
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effects = DragDropEffects.All; // Okay
+            else
+                e.Effects = DragDropEffects.None; // Unknown data, ignore it
+        }
+
+        private void imgSource_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effects = DragDropEffects.All; // Okay
+            else
+                e.Effects = DragDropEffects.None; // Unknown data, ignore it
+        }
         /// <summary>
         /// The drop activity on the textbox.
         /// </summary>
@@ -108,19 +151,6 @@ namespace DragAndDropSample
         private void cmdOpenExplorer_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("explorer.exe", @"C:\Users");
-        }
-
-        private void imgSource_DragEnter(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                e.Effects = DragDropEffects.Copy; // Okay
-            else
-                e.Effects = DragDropEffects.None; // Unknown data, ignore it
-        }
-
-        private void imgSource_DragOver(object sender, DragEventArgs e)
-        {
-
         }
     }
 }

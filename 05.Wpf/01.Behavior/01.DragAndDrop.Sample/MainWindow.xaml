@@ -11,8 +11,17 @@
             <Button x:Name="cmdOpenExplorer" Content="Open Explorer" Margin="2" Width="100"
                     Click="cmdOpenExplorer_Click"/>
         </StackPanel>
-        <Border x:Name="imgSource" AllowDrop="True"
-                DragEnter="imgSource_DragEnter"
-                DragOver="imgSource_DragOver"/>
+        <Border BorderThickness="2"
+                BorderBrush="DimGray"
+                Background="Silver"
+                Margin="5"
+                x:Name="imgSource" 
+                AllowDrop="True"
+                GiveFeedback="imgSource_GiveFeedback"
+                   DragEnter="imgSource_DragEnter"
+                   DragOver="imgSource_DragOver">
+            <Image Width="300"
+                   Height="300"/>
+        </Border>
     </DockPanel>
 </Window>

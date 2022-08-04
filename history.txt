@@ -25,8 +25,15 @@ NLib.Net code samples  #13
 NLib.Net code samples  #12
 - 
 
+[commited]
 NLib.Net code samples  #11
-- 
+- DragAndDrop.Sample project
+  - Test Drop #4. (Work with below condition).
+    - Enable UAC
+    - Add app manifest and remove all requestedPrivileges
+    - do not run as administrator
+    - from example the Border control need to set background brush because when background is transparent it will
+      not got drag-drop events
 
 [commited]
 NLib.Net code samples  #10
