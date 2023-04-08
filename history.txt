@@ -16,8 +16,9 @@ NLib.Net code samples  #16
 NLib.Net code samples  #15
 - 
 
+[commited]
 NLib.Net code samples  #14
-- 
+- Add Wpf Layout UserControl projects (Class library and Test app).
 
 [commited]
 NLib.Net code samples  #13
