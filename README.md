@@ -1,1 +1,1 @@
-# Election Analytic System v1.0.0
+# NLib.dotnet.code.samples
