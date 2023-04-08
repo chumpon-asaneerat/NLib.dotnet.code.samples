@@ -4,8 +4,109 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="PresentationOptions">
+    <!--  COMMON FONT SIZE  -->
+    <sys:Double x:Key="FontSize14" PresentationOptions:Freeze="True">14</sys:Double>
+    <sys:Double x:Key="FontSize16" PresentationOptions:Freeze="True">16</sys:Double>
+    <sys:Double x:Key="FontSize18" PresentationOptions:Freeze="True">18</sys:Double>
+    <sys:Double x:Key="FontSize20" PresentationOptions:Freeze="True">20</sys:Double>
+    <sys:Double x:Key="FontSize22" PresentationOptions:Freeze="True">22</sys:Double>
+    <sys:Double x:Key="FontSize24" PresentationOptions:Freeze="True">24</sys:Double>
+    <sys:Double x:Key="FontSize26" PresentationOptions:Freeze="True">26</sys:Double>
+    <sys:Double x:Key="FontSize28" PresentationOptions:Freeze="True">28</sys:Double>
+    <sys:Double x:Key="FontSize30" PresentationOptions:Freeze="True">30</sys:Double>
+    <sys:Double x:Key="FontSize32" PresentationOptions:Freeze="True">32</sys:Double>
+    <sys:Double x:Key="FontSize34" PresentationOptions:Freeze="True">34</sys:Double>
+    <sys:Double x:Key="FontSize36" PresentationOptions:Freeze="True">36</sys:Double>
+    <sys:Double x:Key="FontSize40" PresentationOptions:Freeze="True">40</sys:Double>
+    <sys:Double x:Key="FontSize44" PresentationOptions:Freeze="True">44</sys:Double>
+    <sys:Double x:Key="FontSize48" PresentationOptions:Freeze="True">48</sys:Double>
+    <sys:Double x:Key="FontSize64" PresentationOptions:Freeze="True">64</sys:Double>
+
+    <!--  DEFAULT FONT FAMILY/FONT SIZE  -->
+    <FontFamily x:Key="DefaultFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="DefaultFontSize" PresentationOptions:Freeze="True">18</sys:Double>
+
+    <!--  CUSTOM COLORS  -->
+    <Color x:Key="BlackColor" PresentationOptions:Freeze="True">#000000</Color>
+    <Color x:Key="WhiteColor" PresentationOptions:Freeze="True">#EFEFEF</Color>
+    <Color x:Key="DimGrayColor" PresentationOptions:Freeze="True">Dimgray</Color>
+    <Color x:Key="SilverColor" PresentationOptions:Freeze="True">Silver</Color>
+    <Color x:Key="OrangeColor" PresentationOptions:Freeze="True">Orange</Color>
+    <Color x:Key="NavyColor" PresentationOptions:Freeze="True">Navy</Color>
+    <Color x:Key="CornflowerBlueColor" PresentationOptions:Freeze="True">CornflowerBlue</Color>
+    <Color x:Key="RoyalBlueColor" PresentationOptions:Freeze="True">RoyalBlue</Color>
+    <Color x:Key="ForestGreenColor" PresentationOptions:Freeze="True">ForestGreen</Color>
+    <Color x:Key="PurpleColor" PresentationOptions:Freeze="True">Purple</Color>
+    <Color x:Key="YellowColor" PresentationOptions:Freeze="True">Yellow</Color>
+    <Color x:Key="DarkRedColor" PresentationOptions:Freeze="True">DarkRed</Color>
+    <Color x:Key="RedColor" PresentationOptions:Freeze="True">Red</Color>
+    <Color x:Key="TransparentColor" PresentationOptions:Freeze="True">Transparent</Color>
+
+    <!--  CUSTOM BRUSHS  -->
+    <SolidColorBrush x:Key="BlackBlush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlackColor}" />
+    <SolidColorBrush x:Key="WhiteBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource WhiteColor}" />
+    <SolidColorBrush x:Key="DimGrayBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DimGrayColor}" />
+    <SolidColorBrush x:Key="SilverBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource SilverColor}" />
+    <SolidColorBrush x:Key="OrangeBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource OrangeColor}" />
+    <SolidColorBrush x:Key="NavyBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource NavyColor}" />
+    <SolidColorBrush x:Key="CornflowerBlueBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource CornflowerBlueColor}" />
+    <SolidColorBrush x:Key="RoyalBlueBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource RoyalBlueColor}" />
+    <SolidColorBrush x:Key="ForestGreenBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource ForestGreenColor}" />
+    <SolidColorBrush x:Key="PurpleBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource PurpleColor}" />
+    <SolidColorBrush x:Key="YellowBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource YellowColor}" />
+    <SolidColorBrush x:Key="DarkRedBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DarkRedColor}" />
+    <SolidColorBrush x:Key="RedBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource RedColor}" />
+    <SolidColorBrush x:Key="TransparentBrush"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource TransparentColor}" />
+
     <!--  COMMON MARGINS  -->
     <Thickness x:Key="CommonMargin">5</Thickness>
     <GridLength x:Key="PageMargin">5</GridLength>
 
+    <!--  COMMON PAGE COLORS  -->
+    <SolidColorBrush x:Key="PageBG"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource DimGrayColor}" />
+
+    <!--  COMMON CAPTION COLORS/SIZE  -->
+    <SolidColorBrush x:Key="CaptionBackground"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource CornflowerBlueColor}" />
+    <SolidColorBrush x:Key="CaptionBorderColor"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource RoyalBlueColor}" />
+    <SolidColorBrush x:Key="CaptionForeground"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource WhiteColor}" />
+
+    <Thickness x:Key="CaptionBorderThickness">1</Thickness>
+    <CornerRadius x:Key="CaptionBorderCornerRadius" PresentationOptions:Freeze="True">3</CornerRadius>
+    <GridLength x:Key="CaptionHeight" PresentationOptions:Freeze="True">40</GridLength>
 </ResourceDictionary>
