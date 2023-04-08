@@ -13,8 +13,10 @@ NLib.Net code samples  #17
 NLib.Net code samples  #16
 - 
 
+[commited]
 NLib.Net code samples  #15
-- 
+- Wpf Layout UserControl projects Update #2
+  - Implements Basic theme xaml files.
 
 [commited]
 NLib.Net code samples  #14
