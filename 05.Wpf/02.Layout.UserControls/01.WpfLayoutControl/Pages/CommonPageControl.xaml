@@ -7,9 +7,7 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <UserControl.Resources>
-        
-    </UserControl.Resources>
+    <UserControl.Resources />
     <Grid Background="{StaticResource PageBG}">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
@@ -49,9 +47,7 @@
                     <!--  BUTTONS BAR  -->
                     <DockPanel LastChildFill="True"
                                DockPanel.Dock="Bottom"
-                               Height="40">
-                        
-                    </DockPanel>
+                               Height="40" />
                     <!--  ITEMS  -->
                     <DockPanel LastChildFill="True" Margin="10,1">
                         <ContentPresenter Content="{Binding WorkArea, ElementName=_ThisCtrl}" />

@@ -25,5 +25,10 @@ namespace WpfLayoutUserControl.Pages
         {
             InitializeComponent();
         }
+
+        private void CommonPageControl_MyEvent(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,8 @@ namespace WpfLayoutControl.Pages
 
         #endregion
 
+        #region Public Properties
+
         #region PageTitle
 
         public static readonly DependencyProperty PageTitleProperty =
@@ -62,6 +64,19 @@ namespace WpfLayoutControl.Pages
             set { SetValue(WorkAreaProperty, value); }
         }
 
+        #endregion
+
+        #endregion
+
+        #region Public Events
+
+        public event RoutedEventHandler MyEvent;
+
+        private void button_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (MyEvent != null)
+                MyEvent(this, e);
+        }
         #endregion
     }
 }
