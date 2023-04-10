@@ -154,8 +154,7 @@
                                 Style="{StaticResource InlineButton}"
                                 Margin="5,0"
                                 Width="150"
-                                Height="30"
-                                Click="cmdHome_Click">
+                                Height="30">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource fa-home}" FontSize="{StaticResource IBFSize}" />
                                 <TextBlock Margin="3,0"
