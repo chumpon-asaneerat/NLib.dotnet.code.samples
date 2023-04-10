@@ -64,7 +64,6 @@
                     <!--  BUTTONS BAR  -->
                     <DockPanel LastChildFill="True"
                                DockPanel.Dock="Bottom"
-                               Margin="1"
                                Height="Auto">
                         <!--  Add New  -->
                         <Button x:Name="cmdAddNew"
@@ -182,7 +181,7 @@
                         <Grid />
                     </DockPanel>
                     <!--  ITEMS  -->
-                    <DockPanel LastChildFill="True" Margin="10,1">
+                    <DockPanel LastChildFill="True">
                         <ContentPresenter Content="{Binding WorkArea, ElementName=_ThisCtrl}" />
                     </DockPanel>
                 </DockPanel>
