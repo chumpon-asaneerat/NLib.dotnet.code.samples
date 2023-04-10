@@ -3,6 +3,7 @@
                     xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:WpfLayoutControl.Controls"
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
@@ -74,13 +75,13 @@
             </Storyboard>
         </ControlTemplate.Resources>
         <Border Padding="1"
-                BorderBrush="{StaticResource InlineButtonOuterBorderBrush}"
+                BorderBrush="{DynamicResource InlineButtonOuterBorderBrush}"
                 BorderThickness="0"
                 CornerRadius="4">
             <Border x:Name="border"
                     Padding="1"
-                    Background="{StaticResource InlineButtonInnerBackground}"
-                    BorderBrush="{StaticResource InlineButtonInnerBorderBrush}"
+                    Background="{DynamicResource InlineButtonInnerBackground}"
+                    BorderBrush="{DynamicResource InlineButtonInnerBorderBrush}"
                     BorderThickness="1"
                     CornerRadius="4">
                 <Grid>
@@ -104,8 +105,8 @@
                                         <TranslateTransform X="-0.368" Y="-0.152" />
                                     </TransformGroup>
                                 </RadialGradientBrush.RelativeTransform>
-                                <GradientStop Offset="0" Color="{StaticResource InlineButtonGlowColor1}" />
-                                <GradientStop Offset="1" Color="{StaticResource InlineButtonGlowColor2}" />
+                                <GradientStop Offset="0" Color="{DynamicResource InlineButtonGlowColor1}" />
+                                <GradientStop Offset="1" Color="{DynamicResource InlineButtonGlowColor2}" />
                             </RadialGradientBrush>
                         </Border.Background>
                     </Border>
@@ -120,8 +121,8 @@
                             CornerRadius="4,4,0,0">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0.494,0.028" EndPoint="0.494,0.889">
-                                <GradientStop Offset="0" Color="{StaticResource InlineButtonShineColor1}" />
-                                <GradientStop Offset="1" Color="{StaticResource InlineButtonShineColor2}" />
+                                <GradientStop Offset="0" Color="{DynamicResource InlineButtonShineColor1}" />
+                                <GradientStop Offset="1" Color="{DynamicResource InlineButtonShineColor2}" />
                             </LinearGradientBrush>
                         </Border.Background>
                     </Border>
@@ -131,42 +132,56 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsPressed" Value="True">
                 <Setter TargetName="shine" Property="Opacity" Value="0.4" />
-                <Setter TargetName="border" Property="Background" Value="{StaticResource InlineButtonPressBorderBackgound}" />
+                <Setter TargetName="border" Property="Background" Value="{DynamicResource InlineButtonPressBorderBackgound}" />
                 <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
-                <Setter Property="Foreground" Value="{StaticResource InlineButtonPressedForground}" />
+                <Setter Property="Foreground" Value="{DynamicResource InlineButtonPressedForground}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
                 <Setter TargetName="border" Property="Padding" Value="0" />
                 <Setter TargetName="border" Property="BorderThickness" Value="2" />
-                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource InlineButtonFocusedBorderBrush}" />
+                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource InlineButtonFocusedBorderBrush}" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
+                    <BeginStoryboard Storyboard="{DynamicResource Timeline1}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{StaticResource Timeline2}" />
+                    <BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{DynamicResource Timeline2}" />
                 </Trigger.ExitActions>
-                <Setter Property="Foreground" Value="{StaticResource InlineButtonHoverForground}" />
+                <Setter Property="Foreground" Value="{DynamicResource InlineButtonHoverForground}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="shine" Property="Visibility" Value="Hidden" />
-                <Setter TargetName="border" Property="Background" Value="{StaticResource InlineButtonDisableBorderBackgound}" />
+                <Setter TargetName="border" Property="Background" Value="{DynamicResource InlineButtonDisableBorderBackgound}" />
                 <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
-                <Setter Property="Foreground" Value="{StaticResource InlineButtonDisableForground}" />
+                <Setter Property="Foreground" Value="{DynamicResource InlineButtonDisableForground}" />
                 <Setter Property="Cursor" Value="Arrow" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <!--  INLINE BUTTON TEXT FONT SIZE  -->
+    <sys:Double x:Key="IBFSize">18</sys:Double>
+    <sys:Double x:Key="IBWidth">160</sys:Double>
+    <sys:Double x:Key="IBHeight">40</sys:Double>
+
     <!--  CONST INLINE BUTTON STYLE  -->
     <Style x:Key="InlineButton" TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="{StaticResource InlineButtonForground}" />
-        <Setter Property="FontFamily" Value="{StaticResource THSarabun}" />
-        <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+        <Setter Property="Margin" Value="2,0" />
+        <Setter Property="Foreground" Value="{DynamicResource InlineButtonForground}" />
+        <Setter Property="FontFamily" Value="{DynamicResource THSarabun}" />
+        <Setter Property="FontSize" Value="{DynamicResource IBFSize}" />
         <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Width" Value="{DynamicResource IBWidth}" />
+        <Setter Property="Height" Value="{DynamicResource IBHeight}" />
         <Setter Property="Template" Value="{DynamicResource InlineButtonTemplate}" />
     </Style>
 
+    <!--  CONST INLINE BUTTON CONTROL STYLE  -->
+    <Style TargetType="{x:Type local:InlineButton}">
+        <Setter Property="Width" Value="{DynamicResource IBWidth}" />
+        <Setter Property="Height" Value="{DynamicResource IBHeight}" />
+        <Setter Property="FontSize" Value="{DynamicResource IBFSize}" />
+    </Style>
 </ResourceDictionary>
