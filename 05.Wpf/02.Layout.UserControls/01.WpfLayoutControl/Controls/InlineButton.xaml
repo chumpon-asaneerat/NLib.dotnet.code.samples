@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WpfLayoutControl.Controls.InlineButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:util="clr-namespace:WpfLayoutControl.Utils"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Name="_ThisCtrl"
+             d:DesignHeight="40"
+             d:DesignWidth="160"
+             mc:Ignorable="d">
+    <Button x:Name="cmd"
+            Style="{StaticResource InlineButton}"
+            Width="{Binding ElementName=_ThisCtrl, Path=ActualWidth}"
+            Height="{Binding ElementName=_ThisCtrl, Path=ActualHeight}">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock util:FontAwesomeOptions.IconType="Add"
+                       FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
+                       VerticalAlignment="Center" />
+            <TextBlock Margin="3,0"
+                       FontFamily="{Binding ElementName=_ThisCtrl, Path=FontFamily}"
+                       FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"
+                       Text="เพิ่มข้อมูล"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+    </Button>
+</UserControl>

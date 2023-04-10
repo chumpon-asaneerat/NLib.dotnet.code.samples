@@ -48,6 +48,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\InlineButton.xaml.cs">
+      <DependentUpon>InlineButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CommonPageControl.xaml.cs">
       <DependentUpon>CommonPageControl.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\InlineButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CommonPageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
