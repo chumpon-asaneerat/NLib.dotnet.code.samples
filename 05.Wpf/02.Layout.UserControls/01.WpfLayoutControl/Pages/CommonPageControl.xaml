@@ -7,7 +7,19 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <UserControl.Resources />
+    <UserControl.Resources>
+        <!--  FILTER BAR VISIBLE STATES  -->
+        <Visibility x:Key="FilterBarVisible">Visible</Visibility>
+        <Visibility x:Key="RefreshButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="SearchButtonVisible">Collapsed</Visibility>
+        <!--  BOTTONS BAR VISIBLE STATES  -->
+        <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
+        <Visibility x:Key="ImportButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="ExportButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="DeleteAllButtonVisible">Collapsed</Visibility>
+    </UserControl.Resources>
     <Grid Background="{StaticResource PageBG}">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
