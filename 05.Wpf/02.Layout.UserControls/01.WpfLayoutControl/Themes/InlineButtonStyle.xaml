@@ -143,10 +143,10 @@
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{DynamicResource Timeline1}" />
+                    <BeginStoryboard Storyboard="{StaticResource Timeline1}" />
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
-                    <BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{DynamicResource Timeline2}" />
+                    <BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{StaticResource Timeline2}" />
                 </Trigger.ExitActions>
                 <Setter Property="Foreground" Value="{DynamicResource InlineButtonHoverForground}" />
             </Trigger>
