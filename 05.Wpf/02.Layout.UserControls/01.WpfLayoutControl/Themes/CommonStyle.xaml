@@ -22,6 +22,13 @@
     <sys:Double x:Key="FontSize48" PresentationOptions:Freeze="True">48</sys:Double>
     <sys:Double x:Key="FontSize64" PresentationOptions:Freeze="True">64</sys:Double>
 
+    <!--  COMMON FONT FAMILY (NOTE actual font name required to right click on font to preview from explorer)  -->
+    <FontFamily x:Key="THSarabun">pack://application:,,,/WpfLayoutControl;Component/Fonts/#TH Sarabun</FontFamily>
+    <FontFamily x:Key="THSarabunNew">pack://application:,,,/WpfLayoutControl;Component/Fonts/#TH Sarabun New</FontFamily>
+    <FontFamily x:Key="Puanpian">pack://application:,,,/WpfLayoutControl;Component/Fonts/#iamsudyod2006-2puanpian</FontFamily>
+    <!--  FONTAWESOME FONT FAMILY  -->
+    <FontFamily x:Key="FontAwesome">pack://application:,,,/WpfLayoutControl;Component/Fonts/FontAwesome.otf#Font Awesome 6 Free Solid</FontFamily>
+
     <!--  DEFAULT FONT FAMILY/FONT SIZE  -->
     <FontFamily x:Key="DefaultFontFamily">Segoe UI</FontFamily>
     <sys:Double x:Key="DefaultFontSize" PresentationOptions:Freeze="True">18</sys:Double>
