@@ -20,11 +20,17 @@ namespace WpfLayoutControl.Utils
     {
         None,
         Home,
+        Close,
+        Add,
+        Edit,
         Save,
         Delete,
-        DeleteAll,
+        Search,
+        Scan,
+        Refresh,
         Import,
         Export,
+        Copy,
         Print,
         Preview,
         Ok,
@@ -91,58 +97,63 @@ namespace WpfLayoutControl.Utils
                     val = FontAwesomeIcon.None; 
                 }
 
+                Style style = null;
                 switch (val)
                 {
                     case FontAwesomeIcon.Home:
-                        {
-                            var style = (Style)Application.Current.Resources["fa-home"];
-                            ctrl.Style = style;
-                        }
+                        style = (Style)Application.Current.Resources["fa-home"];
+                        break;
+                    case FontAwesomeIcon.Close:
+                        style = (Style)Application.Current.Resources["fa-close"];
+                        break;
+
+                    case FontAwesomeIcon.Add:
+                        style = (Style)Application.Current.Resources["fa-addnew"];
+                        break;
+                    case FontAwesomeIcon.Edit:
+                        style = (Style)Application.Current.Resources["fa-edit"];
                         break;
                     case FontAwesomeIcon.Save:
-                        {
-
-                        }
+                        style = (Style)Application.Current.Resources["fa-save"];
                         break;
                     case FontAwesomeIcon.Delete:
-                        {
-
-                        }
+                        style = (Style)Application.Current.Resources["fa-remove"];
                         break;
-                    case FontAwesomeIcon.DeleteAll:
-                        {
 
-                        }
-                        break;
                     case FontAwesomeIcon.Import:
-                        {
-
-                        }
+                        style = (Style)Application.Current.Resources["fa-import"];
                         break;
                     case FontAwesomeIcon.Export:
-                        {
-
-                        }
+                        style = (Style)Application.Current.Resources["fa-export"];
                         break;
-                    case FontAwesomeIcon.Print:
-                        {
 
-                        }
+                    case FontAwesomeIcon.Search:
+                        style = (Style)Application.Current.Resources["fa-search"];
+                        break;
+                    case FontAwesomeIcon.Scan:
+                        style = (Style)Application.Current.Resources["fa-scan"];
+                        break;
+                    case FontAwesomeIcon.Refresh:
+                        style = (Style)Application.Current.Resources["fa-refresh"];
+                        break;
+
+                    case FontAwesomeIcon.Copy:
+                        style = (Style)Application.Current.Resources["fa-copy"];
+                        break;
+                        break;
+
+                    case FontAwesomeIcon.Print:
+                        style = (Style)Application.Current.Resources["fa-print"];
                         break;
                     case FontAwesomeIcon.Preview:
-                        {
-
-                        }
+                        style = (Style)Application.Current.Resources["fa-home"];
                         break;
-                    case FontAwesomeIcon.Ok:
-                        {
 
-                        }
+                    case FontAwesomeIcon.Ok:
+                        style = (Style)Application.Current.Resources["fa-ok"];
                         break;
                     case FontAwesomeIcon.Cancel:
-                        {
-
-                        }
+                        style = (Style)Application.Current.Resources["fa-cancel"];
                         break;
                     default:
                         {
@@ -150,14 +161,10 @@ namespace WpfLayoutControl.Utils
                         }
                         break;
                 }
-
-                if (val == FontAwesomeIcon.None)
+                // Apply style
+                if (null != style)
                 {
-
-                }
-                else
-                {
-
+                    ctrl.Style = style;
                 }
             }
         }

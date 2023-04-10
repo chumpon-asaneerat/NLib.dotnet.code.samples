@@ -22,8 +22,8 @@
         <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
         <Visibility x:Key="ImportButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="ExportButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="PrintButtonVisible">Visible</Visibility>
-        <Visibility x:Key="AddNewButtonVisible">Visible</Visibility>
+        <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="DeleteAllButtonVisible">Visible</Visibility>
     </UserControl.Resources>
     <Grid Background="{StaticResource PageBG}">
@@ -75,7 +75,7 @@
                                 Width="{StaticResource IBWidth}"
                                 Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-addnew}"
+                                <TextBlock util:FontAwesomeOptions.IconType="Add"
                                            FontSize="{StaticResource IBFSize}"
                                            VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
@@ -93,7 +93,7 @@
                                 Width="{StaticResource IBWidth}"
                                 Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-import}"
+                                <TextBlock util:FontAwesomeOptions.IconType="Import"
                                            FontSize="{StaticResource IBFSize}"
                                            VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
@@ -112,7 +112,7 @@
                                 Width="{StaticResource IBWidth}"
                                 Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-export}"
+                                <TextBlock util:FontAwesomeOptions.IconType="Export"
                                            FontSize="{StaticResource IBFSize}"
                                            VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
@@ -131,7 +131,7 @@
                                 Width="{StaticResource IBWidth}"
                                 Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-print}"
+                                <TextBlock util:FontAwesomeOptions.IconType="Print"
                                            FontSize="{StaticResource IBFSize}"
                                            VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
@@ -150,7 +150,7 @@
                                 Width="{StaticResource IBWidth}"
                                 Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-remove}"
+                                <TextBlock util:FontAwesomeOptions.IconType="Delete"
                                            FontSize="{StaticResource IBFSize}"
                                            VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
@@ -169,8 +169,8 @@
                                 Width="{StaticResource IBWidth}"
                                 Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="{StaticResource IBFSize}"
-                                           util:FontAwesomeOptions.IconType="Home"
+                                <TextBlock util:FontAwesomeOptions.IconType="Home"
+                                           FontSize="{StaticResource IBFSize}"
                                            VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
