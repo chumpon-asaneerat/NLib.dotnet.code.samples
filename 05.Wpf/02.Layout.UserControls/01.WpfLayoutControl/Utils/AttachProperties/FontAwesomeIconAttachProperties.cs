@@ -7,9 +7,11 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using WpfLayoutControl.Controls;
+
 #endregion
 
-namespace WpfLayoutControl.Utils
+namespace WpfLayoutControl.Controls
 {
     #region FontAwesome Enum
 
@@ -38,7 +40,10 @@ namespace WpfLayoutControl.Utils
     }
 
     #endregion
+}
 
+namespace WpfLayoutControl.Utils
+{
     #region FontAwesomeOptions
 
     /// <summary>

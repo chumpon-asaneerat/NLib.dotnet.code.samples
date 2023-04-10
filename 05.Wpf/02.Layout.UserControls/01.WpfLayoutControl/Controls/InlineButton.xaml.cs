@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfLayoutControl.Pages;
 
 #endregion
 
@@ -33,6 +34,50 @@ namespace WpfLayoutControl.Controls
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Public Properties
+
+        #region IconType
+
+        /// <summary>
+        /// The IconTypeProperty Dependency Property.
+        /// </summary>
+        public static readonly DependencyProperty IconTypeProperty =
+            DependencyProperty.Register("IconType", typeof(FontAwesomeIcon), typeof(InlineButton));
+        /// <summary>
+        /// Gets or sets Inline Button Icon.
+        /// </summary>
+        public FontAwesomeIcon IconType
+        {
+            get { return (FontAwesomeIcon)GetValue(IconTypeProperty); }
+            set { SetValue(IconTypeProperty, value); }
+        }
+
+        #endregion
+
+        #region Text
+
+        /// <summary>
+        /// The TextProperty Dependency Property.
+        /// </summary>
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Text", typeof(string), typeof(InlineButton));
+        /// <summary>
+        /// Gets or sets Inline Button Text.
+        /// </summary>
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Public Events
 
         #endregion
     }

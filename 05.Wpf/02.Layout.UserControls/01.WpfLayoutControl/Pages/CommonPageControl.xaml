@@ -167,7 +167,8 @@
                                            FontSize="{StaticResource IBFSize}"
                                            Width="{StaticResource IBWidth}"
                                            Height="{StaticResource IBHeight}"
-                                           DockPanel.Dock="Right"/>
+                                           Text="เพิ่มข้อมูล"
+                                           DockPanel.Dock="Right" />
                         <!--
                         <Button x:Name="cmdHome"
                                 Visibility="{StaticResource HomeButtonVisible}"
