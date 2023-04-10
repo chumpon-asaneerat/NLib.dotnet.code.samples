@@ -2,19 +2,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using WpfLayoutControl.Pages;
 
 #endregion
 
@@ -34,6 +24,47 @@ namespace WpfLayoutControl.Controls
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region Private Methods
+
+        #region Dispatcher helper method (invoke event)
+
+        private void InvokeAction(Action action)
+        {
+            try
+            {
+                if (null == action) return;
+                if (null != Application.Current.Dispatcher)
+                {
+                    Application.Current.Dispatcher.BeginInvoke(action);
+                }
+                else
+                {
+                    action();
+                }
+            }
+            catch { }
+        }
+
+        #endregion
+
+        #region Button Handlers
+
+        private void cmd_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != Click)
+            {
+                InvokeAction(new Action(() =>
+                {
+                    e.Source = this; // Change source.
+                    Click(this, e);
+                }));
+            }
+        }
+
+        #endregion
 
         #endregion
 
@@ -78,6 +109,11 @@ namespace WpfLayoutControl.Controls
         #endregion
 
         #region Public Events
+
+        /// <summary>
+        /// The Click Event.
+        /// </summary>
+        public event RoutedEventHandler Click;
 
         #endregion
     }

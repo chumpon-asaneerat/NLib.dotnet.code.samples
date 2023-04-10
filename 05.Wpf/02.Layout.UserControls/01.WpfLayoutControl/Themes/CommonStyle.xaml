@@ -100,18 +100,18 @@
     <!--  COMMON PAGE COLORS  -->
     <SolidColorBrush x:Key="PageBG"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource DimGrayColor}" />
+                     Color="{DynamicResource DimGrayColor}" />
 
     <!--  COMMON CAPTION COLORS/SIZE  -->
     <SolidColorBrush x:Key="CaptionBackground"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource CornflowerBlueColor}" />
+                     Color="{DynamicResource CornflowerBlueColor}" />
     <SolidColorBrush x:Key="CaptionBorderColor"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource RoyalBlueColor}" />
+                     Color="{DynamicResource RoyalBlueColor}" />
     <SolidColorBrush x:Key="CaptionForeground"
                      PresentationOptions:Freeze="True"
-                     Color="{StaticResource WhiteColor}" />
+                     Color="{DynamicResource WhiteColor}" />
 
     <Thickness x:Key="CaptionBorderThickness">1</Thickness>
     <CornerRadius x:Key="CaptionBorderCornerRadius" PresentationOptions:Freeze="True">3</CornerRadius>

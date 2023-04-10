@@ -169,7 +169,8 @@
                                            Height="{StaticResource IBHeight}"
                                            IconType="Home"
                                            Text="เพิ่มข้อมูล"
-                                           DockPanel.Dock="Right" />
+                                           DockPanel.Dock="Right" 
+                                           Click="cmdHome_Click"/>
                         <!--
                         <ctrl:InlineButton x:Name="cmdHome"
                                            Margin="2,0"

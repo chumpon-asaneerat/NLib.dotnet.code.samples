@@ -11,7 +11,8 @@
     <Button x:Name="cmd"
             Style="{StaticResource InlineButton}"
             Width="{Binding ElementName=_ThisCtrl, Path=ActualWidth}"
-            Height="{Binding ElementName=_ThisCtrl, Path=ActualHeight}">
+            Height="{Binding ElementName=_ThisCtrl, Path=ActualHeight}"
+            Click="cmd_Click">
         <StackPanel Orientation="Horizontal">
             <TextBlock util:FontAwesomeOptions.IconType="{Binding ElementName=_ThisCtrl, Path=IconType}"
                        FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}"

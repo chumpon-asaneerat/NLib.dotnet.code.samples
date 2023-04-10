@@ -78,5 +78,10 @@ namespace WpfLayoutControl.Pages
                 MyEvent(this, e);
         }
         #endregion
+
+        private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Click");
+        }
     }
 }
