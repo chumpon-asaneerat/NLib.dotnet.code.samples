@@ -167,8 +167,19 @@
                                            FontSize="{StaticResource IBFSize}"
                                            Width="{StaticResource IBWidth}"
                                            Height="{StaticResource IBHeight}"
+                                           IconType="Home"
                                            Text="เพิ่มข้อมูล"
                                            DockPanel.Dock="Right" />
+                        <!--
+                        <ctrl:InlineButton x:Name="cmdHome"
+                                           Margin="2,0"
+                                           FontSize="{StaticResource IBFSize}"
+                                           Width="{StaticResource IBWidth}"
+                                           Height="{StaticResource IBHeight}"
+                                           IconType="{x:Static ctrl:FontAwesomeIcon.Home}"
+                                           Text="เพิ่มข้อมูล"
+                                           DockPanel.Dock="Right" />
+                        -->
                         <!--
                         <Button x:Name="cmdHome"
                                 Visibility="{StaticResource HomeButtonVisible}"

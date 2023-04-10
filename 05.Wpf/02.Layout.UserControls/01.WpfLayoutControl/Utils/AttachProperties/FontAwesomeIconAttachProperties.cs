@@ -2,8 +2,10 @@
 
 using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -13,7 +15,7 @@ using WpfLayoutControl.Controls;
 
 namespace WpfLayoutControl.Controls
 {
-    #region FontAwesome Enum
+    #region FontAwesomeIcon Enum
 
     /// <summary>
     /// The FontAwesomeIcon Enum.
