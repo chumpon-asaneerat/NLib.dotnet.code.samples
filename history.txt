@@ -19,8 +19,10 @@ NLib.Net code samples  #25
 NLib.Net code samples  #24
 - 
 
+[commited]
 NLib.Net code samples  #23
-- 
+- Wpf Layout UserControl projects Update #9
+  - Implements Common Page Control #7.
 
 [commited]
 NLib.Net code samples  #22

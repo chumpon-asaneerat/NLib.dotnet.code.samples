@@ -11,6 +11,8 @@
     <UserControl.Resources>
         <!--  INLINE BUTTON TEXT FONT SIZE  -->
         <sys:Double x:Key="IBFSize">18</sys:Double>
+        <sys:Double x:Key="IBWidth">160</sys:Double>
+        <sys:Double x:Key="IBHeight">40</sys:Double>
         <!--  FILTER BAR VISIBLE STATES  -->
         <Visibility x:Key="FilterBarVisible">Visible</Visibility>
         <Visibility x:Key="RefreshButtonVisible">Collapsed</Visibility>
@@ -19,9 +21,9 @@
         <Visibility x:Key="HomeButtonVisible">Visible</Visibility>
         <Visibility x:Key="ImportButtonVisible">Collapsed</Visibility>
         <Visibility x:Key="ExportButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="PrintButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="AddNewButtonVisible">Collapsed</Visibility>
-        <Visibility x:Key="DeleteAllButtonVisible">Collapsed</Visibility>
+        <Visibility x:Key="PrintButtonVisible">Visible</Visibility>
+        <Visibility x:Key="AddNewButtonVisible">Visible</Visibility>
+        <Visibility x:Key="DeleteAllButtonVisible">Visible</Visibility>
     </UserControl.Resources>
     <Grid Background="{StaticResource PageBG}">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -62,17 +64,20 @@
                     <!--  BUTTONS BAR  -->
                     <DockPanel LastChildFill="True"
                                DockPanel.Dock="Bottom"
-                               Height="40">
+                               Margin="1"
+                               Height="Auto">
                         <!--  Add New  -->
                         <Button x:Name="cmdAddNew"
                                 Visibility="{StaticResource AddNewButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
+                                Margin="2,0"
+                                Width="{StaticResource IBWidth}"
+                                Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-addnew}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-addnew}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            Text="เพิ่มข้อมูล"
@@ -84,11 +89,13 @@
                                 Visibility="{StaticResource ImportButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
+                                Margin="2,0"
+                                Width="{StaticResource IBWidth}"
+                                Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-import}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-import}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
@@ -101,11 +108,13 @@
                                 Visibility="{StaticResource ExportButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
+                                Margin="2,0"
+                                Width="{StaticResource IBWidth}"
+                                Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-export}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-export}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
@@ -118,11 +127,13 @@
                                 Visibility="{StaticResource PrintButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
+                                Margin="2,0"
+                                Width="{StaticResource IBWidth}"
+                                Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-print}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-print}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
@@ -135,11 +146,13 @@
                                 Visibility="{StaticResource DeleteAllButtonVisible}"
                                 DockPanel.Dock="Left"
                                 Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
+                                Margin="2,0"
+                                Width="{StaticResource IBWidth}"
+                                Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-remove}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-remove}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
@@ -152,11 +165,13 @@
                                 Visibility="{StaticResource HomeButtonVisible}"
                                 DockPanel.Dock="Right"
                                 Style="{StaticResource InlineButton}"
-                                Margin="5,0"
-                                Width="150"
-                                Height="30">
+                                Margin="2,0"
+                                Width="{StaticResource IBWidth}"
+                                Height="{StaticResource IBHeight}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource fa-home}" FontSize="{StaticResource IBFSize}" />
+                                <TextBlock Style="{StaticResource fa-home}"
+                                           FontSize="{StaticResource IBFSize}"
+                                           VerticalAlignment="Center" />
                                 <TextBlock Margin="3,0"
                                            FontFamily="{StaticResource THSarabun}"
                                            FontSize="{StaticResource IBFSize}"
