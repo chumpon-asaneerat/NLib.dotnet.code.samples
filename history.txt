@@ -16,8 +16,9 @@ NLib.Net code samples  #36
 NLib.Net code samples  #35
 - 
 
+[commited]
 NLib.Net code samples  #34
-- 
+- Add T4.Text.Template project.
 
 [commited]
 NLib.Net code samples  #33

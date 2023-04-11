@@ -34,6 +34,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.WpfLayoutControl", "05.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.WpfLayoutUserControlApp", "05.Wpf\02.Layout.UserControls\02.WpfLayoutUserControlApp\02.WpfLayoutUserControlApp.csproj", "{F3289E78-9B8E-47D7-AE5E-39261DF48C12}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Templates", "04.Templates", "{E593F6C0-AE38-4333-B0D1-DC763363D769}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.T4.Text.Template", "01.T4.Text.Template", "{F5DFAB59-C2B5-4B05-8B19-41A7AB78E985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.T4.Text.Template.Sample", "04.Templates\01.T4.Text.Template\01.T4.Text.Template.Sample.csproj", "{75D65004-300A-44FA-A871-CC79985DF039}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +70,10 @@ Global
 		{F3289E78-9B8E-47D7-AE5E-39261DF48C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3289E78-9B8E-47D7-AE5E-39261DF48C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3289E78-9B8E-47D7-AE5E-39261DF48C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75D65004-300A-44FA-A871-CC79985DF039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75D65004-300A-44FA-A871-CC79985DF039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75D65004-300A-44FA-A871-CC79985DF039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75D65004-300A-44FA-A871-CC79985DF039}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +89,8 @@ Global
 		{EF12674F-2BDF-4704-92A1-AED0ED79923D} = {B8F4930F-864B-432C-880F-A9A73F566B97}
 		{F69B3F70-0162-4181-B71E-EFD03312AE9A} = {EF12674F-2BDF-4704-92A1-AED0ED79923D}
 		{F3289E78-9B8E-47D7-AE5E-39261DF48C12} = {EF12674F-2BDF-4704-92A1-AED0ED79923D}
+		{F5DFAB59-C2B5-4B05-8B19-41A7AB78E985} = {E593F6C0-AE38-4333-B0D1-DC763363D769}
+		{75D65004-300A-44FA-A871-CC79985DF039} = {F5DFAB59-C2B5-4B05-8B19-41A7AB78E985}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11E84371-DE6B-4B78-BB92-B71EECC46630}
