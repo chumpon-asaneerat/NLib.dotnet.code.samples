@@ -7,7 +7,7 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <ctrl:CommonPageControl PageTitle="Test" 
+    <ctrl:CommonPageControl PageTitle="Test"
                             ShowButtons="Home,Export,Delete"
                             NavigatorButtonClick="CommonPageControl_NavigatorButtonClick">
         <Button Content="Click Me" />
