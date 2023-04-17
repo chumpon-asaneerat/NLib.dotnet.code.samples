@@ -22,24 +22,24 @@ namespace WpfLayoutControl.Controls
     /// </summary>
     public enum FontAwesomeIcon : uint
     {
-        None = 0,
-        Home = 1,
-        Back = 2,
-        Close = 4,
-        Add = 8,
-        Edit = 16,
-        Save = 32,
-        Delete = 64,
-        Search = 128,
-        Scan = 256,
-        Refresh = 512,
-        Import = 1024,
-        Export = 2048,
-        Copy = 4096,
-        Print = 8192,
-        Preview = 16384,
-        Ok = 32768,
-        Cancel = 65536
+        None    = 0x00000000,
+        Home    = 0x00000001,
+        Back    = 0x00000002,
+        Close   = 0x00000004,
+        Add     = 0x00000008,
+        Edit    = 0x00000010,
+        Save    = 0x00000020,
+        Delete  = 0x00000040,
+        Search  = 0x00000080,
+        Scan    = 0x00000100,
+        Refresh = 0x00000200,
+        Import  = 0x00000400,
+        Export  = 0x00000800,
+        Copy    = 0x00001000,
+        Print   = 0x00002000,
+        Preview = 0x00004000,
+        Ok      = 0x00008000,
+        Cancel  = 0x00010000
     }
 
     #endregion
@@ -52,24 +52,24 @@ namespace WpfLayoutControl.Controls
     [Flags]
     public enum FontAwesomeButtons : uint
     {
-        None = 0,
-        Home = 1,
-        Back = 2,
-        Close = 4,
-        Add = 8,
-        Edit = 16,
-        Save = 32,
-        Delete = 64,
-        Search = 128,
-        Scan = 256,
-        Refresh = 512,
-        Import = 1024,
-        Export = 2048,
-        Copy = 4096,
-        Print = 8192,
-        Preview = 16384,
-        Ok = 32768,
-        Cancel = 65536
+        None    = 0x00000000,
+        Home    = 0x00000001,
+        Back    = 0x00000002,
+        Close   = 0x00000004,
+        Add     = 0x00000008,
+        Edit    = 0x00000010,
+        Save    = 0x00000020,
+        Delete  = 0x00000040,
+        Search  = 0x00000080,
+        Scan    = 0x00000100,
+        Refresh = 0x00000200,
+        Import  = 0x00000400,
+        Export  = 0x00000800,
+        Copy    = 0x00001000,
+        Print   = 0x00002000,
+        Preview = 0x00004000,
+        Ok      = 0x00008000,
+        Cancel  = 0x00010000
     }
 
     #endregion

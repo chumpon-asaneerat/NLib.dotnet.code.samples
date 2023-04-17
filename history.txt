@@ -22,8 +22,9 @@ NLib.Net code samples  #44
 NLib.Net code samples  #43
 - 
 
+[commited]
 NLib.Net code samples  #42
-- 
+  - Implements NavigateButtons control #5.
 
 [commited]
 NLib.Net code samples  #41
