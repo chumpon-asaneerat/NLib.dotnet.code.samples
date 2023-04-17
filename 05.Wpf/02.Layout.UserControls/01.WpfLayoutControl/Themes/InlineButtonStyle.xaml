@@ -168,7 +168,6 @@
     <!--  CONST INLINE BUTTON STYLE  -->
     <Style x:Key="InlineButton" TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Margin" Value="2,0" />
         <Setter Property="Foreground" Value="{DynamicResource InlineButtonForground}" />
         <Setter Property="FontFamily" Value="{DynamicResource THSarabun}" />
         <Setter Property="FontSize" Value="{DynamicResource IBFSize}" />
