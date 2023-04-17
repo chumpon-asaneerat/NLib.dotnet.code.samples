@@ -20,26 +20,26 @@ namespace WpfLayoutControl.Controls
     /// <summary>
     /// The FontAwesomeIcon Enum.
     /// </summary>
-    public enum FontAwesomeIcon
+    public enum FontAwesomeIcon : uint
     {
         None = 0,
-        Home,
-        Back,
-        Close,
-        Add,
-        Edit,
-        Save,
-        Delete,
-        Search,
-        Scan,
-        Refresh,
-        Import,
-        Export,
-        Copy,
-        Print,
-        Preview,
-        Ok,
-        Cancel
+        Home = 1,
+        Back = 2,
+        Close = 4,
+        Add = 8,
+        Edit = 16,
+        Save = 32,
+        Delete = 64,
+        Search = 128,
+        Scan = 256,
+        Refresh = 512,
+        Import = 1024,
+        Export = 2048,
+        Copy = 4096,
+        Print = 8192,
+        Preview = 16384,
+        Ok = 32768,
+        Cancel = 65536
     }
 
     #endregion
@@ -50,26 +50,26 @@ namespace WpfLayoutControl.Controls
     /// The FontAwesomeButtons Flags.
     /// </summary>
     [Flags]
-    public enum FontAwesomeButtons
+    public enum FontAwesomeButtons : uint
     {
         None = 0,
-        Home,
-        Back,
-        Close,
-        Add,
-        Edit,
-        Save,
-        Delete,
-        Search,
-        Scan,
-        Refresh,
-        Import,
-        Export,
-        Copy,
-        Print,
-        Preview,
-        Ok,
-        Cancel
+        Home = 1,
+        Back = 2,
+        Close = 4,
+        Add = 8,
+        Edit = 16,
+        Save = 32,
+        Delete = 64,
+        Search = 128,
+        Scan = 256,
+        Refresh = 512,
+        Import = 1024,
+        Export = 2048,
+        Copy = 4096,
+        Print = 8192,
+        Preview = 16384,
+        Ok = 32768,
+        Cancel = 65536
     }
 
     #endregion

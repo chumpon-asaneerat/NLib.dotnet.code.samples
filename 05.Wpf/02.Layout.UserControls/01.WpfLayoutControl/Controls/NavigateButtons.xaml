@@ -8,57 +8,61 @@
              xmlns:ctrl="clr-namespace:WpfLayoutControl.Controls"
              x:Name="_ThisCtrl"
              d:DesignHeight="50"
-             d:DesignWidth="1000"
+             d:DesignWidth="1200"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <ResourceDictionary />
+        <util:ShowButtonsConverter x:Key="ShowButtonsConverter" />
     </UserControl.Resources>
-    <DockPanel LastChildFill="True"
-               DockPanel.Dock="Bottom"
-               Height="Auto">
-        <StackPanel Orientation="Horizontal"
-                    VerticalAlignment="Stretch"
-                    DockPanel.Dock="Left">
-            <!--  NEW  -->
-            <ctrl:InlineButton x:Name="cmdNew"
-                               IconType="Add"
-                               Text="New"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-            <!--  DELETE  -->
-            <ctrl:InlineButton x:Name="cmdDelete"
-                               IconType="Delete"
-                               Text="Delete"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-            <!--  SAVE  -->
-            <ctrl:InlineButton x:Name="cmdSave"
-                               IconType="Save"
-                               Text="Save"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-            <!--  PRINT  -->
-            <ctrl:InlineButton x:Name="cmdPrint"
-                               IconType="Print"
-                               Text="Print"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-            <!--  EXPORT  -->
-            <ctrl:InlineButton x:Name="cmdExport"
-                               IconType="Export"
-                               Text="Export"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal"
-                    VerticalAlignment="Stretch"
-                    DockPanel.Dock="Right">
-            <!--  BACK  -->
-            <ctrl:InlineButton x:Name="cmdBack"
-                               IconType="Back"
-                               Text="Back"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-            <!--  Main Menu  -->
-            <ctrl:InlineButton x:Name="cmdHome"
-                               IconType="Home"
-                               Text="Main Menu"
-                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" />
+    <DockPanel LastChildFill="True" Height="Auto">
+        <!--  NEW  -->
+        <ctrl:InlineButton x:Name="cmdNew"
+                           DockPanel.Dock="Left"
+                           IconType="Add"
+                           Text="New"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Add}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <!--  DELETE  -->
+        <ctrl:InlineButton x:Name="cmdDelete"
+                           DockPanel.Dock="Left"
+                           IconType="Delete"
+                           Text="Delete"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Delete}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <!--  SAVE  -->
+        <ctrl:InlineButton x:Name="cmdSave"
+                           DockPanel.Dock="Left"
+                           IconType="Save"
+                           Text="Save"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Save}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <!--  PRINT  -->
+        <ctrl:InlineButton x:Name="cmdPrint"
+                           DockPanel.Dock="Left"
+                           IconType="Print"
+                           Text="Print"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Print}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <!--  EXPORT  -->
+        <ctrl:InlineButton x:Name="cmdExport"
+                           DockPanel.Dock="Left"
+                           IconType="Export"
+                           Text="Export"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Export}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <!--  Main Menu  -->
+        <ctrl:InlineButton x:Name="cmdHome"
+                           DockPanel.Dock="Right"
+                           IconType="Home"
+                           Text="Main Menu"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Home}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <!--  BACK  -->
+        <ctrl:InlineButton x:Name="cmdBack"
+                           DockPanel.Dock="Right"
+                           IconType="Back"
+                           Text="Back"
+                           Visibility="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Converter={StaticResource ShowButtonsConverter}, ConverterParameter={x:Static ctrl:FontAwesomeIcon.Back}}"
+                           FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        <Grid />
     </DockPanel>
 </UserControl>

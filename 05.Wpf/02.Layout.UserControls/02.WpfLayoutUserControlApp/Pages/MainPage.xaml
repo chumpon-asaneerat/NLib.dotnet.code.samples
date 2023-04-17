@@ -7,7 +7,9 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <ctrl:CommonPageControl PageTitle="Test" MyEvent="CommonPageControl_MyEvent">
+    <ctrl:CommonPageControl PageTitle="Test"
+                            MyEvent="CommonPageControl_MyEvent"
+                            ShowButtons="Add,Home">
         <Button Content="Click Me" />
     </ctrl:CommonPageControl>
 </UserControl>
