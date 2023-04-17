@@ -10,8 +10,10 @@ NLib.Net code samples  #38
 NLib.Net code samples  #37
 - 
 
+[commited]
 NLib.Net code samples  #36
-- 
+- Wpf Layout UserControl projects Update #19
+  - Implements InlineButton control #7.
 
 [commited]
 NLib.Net code samples  #35
