@@ -22,8 +22,39 @@ namespace WpfLayoutControl.Controls
     /// </summary>
     public enum FontAwesomeIcon
     {
-        None,
+        None = 0,
         Home,
+        Back,
+        Close,
+        Add,
+        Edit,
+        Save,
+        Delete,
+        Search,
+        Scan,
+        Refresh,
+        Import,
+        Export,
+        Copy,
+        Print,
+        Preview,
+        Ok,
+        Cancel
+    }
+
+    #endregion
+
+    #region FontAwesomeButtons Flags
+
+    /// <summary>
+    /// The FontAwesomeButtons Flags.
+    /// </summary>
+    [Flags]
+    public enum FontAwesomeButtons
+    {
+        None = 0,
+        Home,
+        Back,
         Close,
         Add,
         Edit,

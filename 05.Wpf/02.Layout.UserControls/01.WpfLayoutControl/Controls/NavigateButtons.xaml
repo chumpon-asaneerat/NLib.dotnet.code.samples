@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="WpfLayoutControl.Controls.NavigateButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:util="clr-namespace:WpfLayoutControl.Utils"
+             xmlns:ctrl="clr-namespace:WpfLayoutControl.Controls"
+             x:Name="_ThisCtrl"
+             d:DesignHeight="50"
+             d:DesignWidth="1000"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary />
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True"
+               DockPanel.Dock="Bottom"
+               Height="Auto">
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Stretch"
+                    DockPanel.Dock="Left">
+            <!--  NEW  -->
+            <ctrl:InlineButton x:Name="cmdNew"
+                               IconType="Add"
+                               Text="New"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+            <!--  DELETE  -->
+            <ctrl:InlineButton x:Name="cmdDelete"
+                               IconType="Delete"
+                               Text="Delete"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+            <!--  SAVE  -->
+            <ctrl:InlineButton x:Name="cmdSave"
+                               IconType="Save"
+                               Text="Save"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+            <!--  PRINT  -->
+            <ctrl:InlineButton x:Name="cmdPrint"
+                               IconType="Print"
+                               Text="Print"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+            <!--  EXPORT  -->
+            <ctrl:InlineButton x:Name="cmdExport"
+                               IconType="Export"
+                               Text="Export"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Stretch"
+                    DockPanel.Dock="Right">
+            <!--  BACK  -->
+            <ctrl:InlineButton x:Name="cmdBack"
+                               IconType="Back"
+                               Text="Back"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+            <!--  Main Menu  -->
+            <ctrl:InlineButton x:Name="cmdHome"
+                               IconType="Home"
+                               Text="Main Menu"
+                               FontSize="{Binding ElementName=_ThisCtrl, Path=FontSize}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" />
+    </DockPanel>
+</UserControl>
