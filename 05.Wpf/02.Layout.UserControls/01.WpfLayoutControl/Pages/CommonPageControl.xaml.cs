@@ -40,6 +40,15 @@ namespace WpfLayoutControl.Pages
 
         #endregion
 
+        #region NavigateButtons Event Handlers
+
+        private void nav_NavigatorButtonClick(object sender, NavigatorButtonEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(e.Icon);
+        }
+
+        #endregion
+
         #region Public Properties
 
         #region PageTitle
@@ -91,18 +100,34 @@ namespace WpfLayoutControl.Pages
 
         #region Public Events
 
-        public event RoutedEventHandler MyEvent;
+        #region NavigatorButtonClick
 
-        private void button_Clicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Raise NavigatorButtonClick Event.
+        /// </summary>
+        /// <param name="icon"></param>
+        protected virtual void RaiseNavigatorButtonClickEvent(FontAwesomeIcon icon)
         {
-            if (MyEvent != null)
-                MyEvent(this, e);
+            NavigatorButtonEventArgs args = new NavigatorButtonEventArgs(NavigatorButtonClickEvent, icon);
+            RaiseEvent(args);
         }
+        /// <summary>
+        /// The NavigatorButtonClickEvent RouteEvent.
+        /// </summary>
+        public static readonly RoutedEvent NavigatorButtonClickEvent =
+                EventManager.RegisterRoutedEvent(
+                    "NavigatorButtonClick", RoutingStrategy.Bubble, typeof(NavigatorButtonEventHandler), typeof(CommonPageControl));
+        /// <summary>
+        /// Add or Remove NavigatorButtonClick event.
+        /// </summary>
+        public event NavigatorButtonEventHandler NavigatorButtonClick
+        {
+            add { AddHandler(NavigatorButtonClickEvent, value); }
+            remove { RemoveHandler(NavigatorButtonClickEvent, value); }
+        }
+
         #endregion
 
-        private void cmdHome_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Click");
-        }
+        #endregion
     }
 }

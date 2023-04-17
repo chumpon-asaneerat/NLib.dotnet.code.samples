@@ -7,9 +7,9 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <ctrl:CommonPageControl PageTitle="Test"
-                            MyEvent="CommonPageControl_MyEvent"
-                            ShowButtons="Add,Home,Delete,Save">
+    <ctrl:CommonPageControl PageTitle="Test" 
+                            ShowButtons="Add,Home,Delete,Save"
+                            NavigatorButtonClick="CommonPageControl_NavigatorButtonClick">
         <Button Content="Click Me" />
     </ctrl:CommonPageControl>
 </UserControl>

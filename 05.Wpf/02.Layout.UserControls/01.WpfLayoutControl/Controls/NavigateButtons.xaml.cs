@@ -53,6 +53,41 @@ namespace WpfLayoutControl.Controls
 
         #region Button Handlers
 
+        private void cmdNew_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Add);
+        }
+
+        private void cmdDelete_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Delete);
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Save);
+        }
+
+        private void cmdPrint_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Print);
+        }
+
+        private void cmdExport_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Export);
+        }
+
+        private void cmdHome_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Home);
+        }
+
+        private void cmdBack_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseNavigatorButtonClickEvent(FontAwesomeIcon.Back);
+        }
+
         #endregion
 
         #endregion
@@ -84,5 +119,77 @@ namespace WpfLayoutControl.Controls
         }
 
         #endregion
+
+        #region Public Events
+
+        #region NavigatorButtonClick
+
+        /// <summary>
+        /// Raise NavigatorButtonClick Event.
+        /// </summary>
+        /// <param name="icon"></param>
+        protected virtual void RaiseNavigatorButtonClickEvent(FontAwesomeIcon icon)
+        {
+            NavigatorButtonEventArgs args = new NavigatorButtonEventArgs(NavigatorButtonClickEvent, icon);
+            RaiseEvent(args);
+        }
+        /// <summary>
+        /// The NavigatorButtonClickEvent RouteEvent.
+        /// </summary>
+        public static readonly RoutedEvent NavigatorButtonClickEvent =
+                EventManager.RegisterRoutedEvent(
+                    "NavigatorButtonClick", RoutingStrategy.Bubble, typeof(NavigatorButtonEventHandler), typeof(NavigateButtons));
+        /// <summary>
+        /// Add or Remove NavigatorButtonClick event.
+        /// </summary>
+        public event NavigatorButtonEventHandler NavigatorButtonClick
+        {
+            add { AddHandler(NavigatorButtonClickEvent, value); }
+            remove { RemoveHandler(NavigatorButtonClickEvent, value); }
+        }
+
+        #endregion
+
+        #endregion
     }
+
+    #region NavigatorButtonEvent Delegate and EventArgs
+
+    /// <summary>
+    /// The Navigator Button Event Handler Delegate.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    public delegate void NavigatorButtonEventHandler(object sender, NavigatorButtonEventArgs e);
+    /// <summary>
+    /// The Navigator Button EventArgs class.
+    /// </summary>
+    public class NavigatorButtonEventArgs : RoutedEventArgs
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="routedEvent"></param>
+        /// <param name="icon"></param>
+        public NavigatorButtonEventArgs(RoutedEvent routedEvent, FontAwesomeIcon icon) : base(routedEvent)
+        {
+            this.Icon = icon;
+
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or set Icon.
+        /// </summary>
+        public FontAwesomeIcon Icon { get; set; }
+
+        #endregion
+    }
+
+    #endregion
 }

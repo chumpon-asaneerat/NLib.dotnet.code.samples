@@ -52,7 +52,8 @@
                                           FontSize="{StaticResource FontSize18}"
                                           DockPanel.Dock="Bottom"
                                           ShowButtons="{Binding ElementName=_ThisCtrl, Path=ShowButtons, Mode=TwoWay}"
-                                          Height="60" />
+                                          Height="60" 
+                                          NavigatorButtonClick="nav_NavigatorButtonClick"/>
                     <!--  ITEMS  -->
                     <DockPanel LastChildFill="True">
                         <ContentPresenter Content="{Binding WorkArea, ElementName=_ThisCtrl}" />

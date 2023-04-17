@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfLayoutControl.Pages;
 
+#endregion
+
 namespace WpfLayoutUserControl.Pages
 {
     /// <summary>
@@ -21,14 +25,34 @@ namespace WpfLayoutUserControl.Pages
     /// </summary>
     public partial class MainPage : UserControl
     {
+        #region Constructor
+
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void CommonPageControl_MyEvent(object sender, RoutedEventArgs e)
-        {
+        #endregion
 
+        private void CommonPageControl_NavigatorButtonClick(object sender, WpfLayoutControl.Controls.NavigatorButtonEventArgs e)
+        {
+            switch (e.Icon)
+            {
+                case WpfLayoutControl.Controls.FontAwesomeIcon.Home:
+                    MessageBox.Show("Home");
+                    break;
+                case WpfLayoutControl.Controls.FontAwesomeIcon.Add:
+                    MessageBox.Show("Add");
+                    break;
+                case WpfLayoutControl.Controls.FontAwesomeIcon.Save:
+                    MessageBox.Show("Save");
+                    break;
+                case WpfLayoutControl.Controls.FontAwesomeIcon.Delete:
+                    MessageBox.Show("Delete");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
