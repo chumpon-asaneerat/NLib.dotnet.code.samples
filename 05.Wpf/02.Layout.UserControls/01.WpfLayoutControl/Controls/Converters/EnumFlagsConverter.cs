@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Using
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -9,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace WpfLayoutControl.Utils
+#endregion
+
+namespace WpfLayoutControl.Converters
 {
     public class EnumBooleanConverter : IValueConverter
     {

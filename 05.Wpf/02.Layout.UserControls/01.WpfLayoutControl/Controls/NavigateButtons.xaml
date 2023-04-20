@@ -5,13 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:util="clr-namespace:WpfLayoutControl.Utils"
+             xmlns:conv="clr-namespace:WpfLayoutControl.Converters"
              xmlns:ctrl="clr-namespace:WpfLayoutControl.Controls"
              x:Name="_ThisCtrl"
              d:DesignHeight="50"
              d:DesignWidth="1200"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <util:ShowButtonsConverter x:Key="ShowButtonsConverter" />
+        <conv:ShowButtonsConverter x:Key="ShowButtonsConverter" />
     </UserControl.Resources>
     <DockPanel LastChildFill="True" Height="Auto">
         <!--  NEW  -->
