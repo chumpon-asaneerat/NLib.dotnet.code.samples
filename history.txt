@@ -28,8 +28,10 @@ NLib.Net code samples  #52
 NLib.Net code samples  #51
 - 
 
+[commited]
 NLib.Net code samples  #50
-- 
+- Wpf Layout UserControl projects Update #31
+  - Rework NavigateButtons controls #3.
 
 [commited]
 NLib.Net code samples  #49

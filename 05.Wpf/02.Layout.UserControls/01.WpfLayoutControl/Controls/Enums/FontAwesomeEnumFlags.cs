@@ -1,4 +1,6 @@
-﻿#region Using
+﻿#define V1
+
+#region Using
 
 using System;
 using System.ComponentModel;
@@ -20,6 +22,7 @@ namespace WpfLayoutControl.Controls
     /// </summary>
     public enum FontAwesomeIcon : uint
     {
+#if V1
         None = 0x00000000,
         Home = 0x00000001,
         Back = 0x00000002,
@@ -42,12 +45,37 @@ namespace WpfLayoutControl.Controls
         No = 0x00040000,
         Ok = 0x00080000,
         Cancel = 0x00100000
+#else
+        None,
+        Home,
+        Back,
+        Close,
+        Add,
+        Edit,
+        Save,
+        Delete,
+        Cut,
+        Copy,
+        Paste,
+        Import,
+        Export,
+        Print,
+        Preview,
+        Search,
+        Refresh,
+        Scan,
+        Yes,
+        No,
+        Ok,
+        Cancel
+#endif
     }
 
     #endregion
 
     #region FontAwesomeButtons Flags
 
+#if V1
     /// <summary>
     /// The FontAwesomeButtons Flags.
     /// </summary>
@@ -77,6 +105,6 @@ namespace WpfLayoutControl.Controls
         Ok = 0x00080000,
         Cancel = 0x00100000
     }
-
+#endif
     #endregion
 }
