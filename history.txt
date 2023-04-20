@@ -10,8 +10,10 @@ NLib.Net code samples  #48
 NLib.Net code samples  #47
 - 
 
+[commited]
 NLib.Net code samples  #46
-- 
+- Wpf Layout UserControl projects Update #28
+  - Add GroupMenuStyle.xaml.
 
 [commited]
 NLib.Net code samples  #45

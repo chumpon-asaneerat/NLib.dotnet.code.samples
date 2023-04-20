@@ -3,5 +3,7 @@
         <ResourceDictionary Source="pack://application:,,,/WpfLayoutControl;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/WpfLayoutControl;component/Themes/FontStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/WpfLayoutControl;component/Themes/InlineButtonStyle.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/WpfLayoutControl;component/Themes/GroupMenuStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
