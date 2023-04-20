@@ -48,6 +48,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Enums\FontAwesomeEnumFlags.cs" />
     <Compile Include="Controls\InlineButton.xaml.cs">
       <DependentUpon>InlineButton.xaml</DependentUpon>
     </Compile>
