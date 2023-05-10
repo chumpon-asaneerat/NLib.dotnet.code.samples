@@ -10,8 +10,9 @@ NLib.Net code samples  #58
 NLib.Net code samples  #57
 - 
 
+[commited]
 NLib.Net code samples  #56
-- 
+- Update Wpf.NInpc project #3.
 
 [commited]
 NLib.Net code samples  #55
