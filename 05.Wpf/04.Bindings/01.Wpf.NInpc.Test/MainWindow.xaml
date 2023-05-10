@@ -3,10 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Wpf.NInpc.Test"
-        mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Wpf NInpc Test"
         Height="450"
-        Width="800">
-    <Grid />
+        Width="800"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        mc:Ignorable="d">
+    <DockPanel LastChildFill="True">
+        <ListView x:Name="lv"
+                  ItemsSource="{Binding}"
+                  IsSynchronizedWithCurrentItem="True"
+                  VirtualizingPanel.VirtualizationMode="Recycling"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.IsContainerVirtualizable="True">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Id">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Width="150"
+                                               Text="{Binding Id}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
 </Window>
