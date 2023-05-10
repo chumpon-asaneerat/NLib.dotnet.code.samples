@@ -61,6 +61,8 @@ namespace Wpf.NInpc.Test
         private void InitItems()
         {
             lv.ItemsSource = Demo.GetItems();
+
+            Demo.Test();
         }
 
         #endregion
@@ -322,6 +324,11 @@ namespace Wpf.NInpc.Test
             Console.WriteLine("Total times: {0:n3}", ts.TotalMilliseconds);
 
             return rets;
+        }
+
+        public static void Test()
+        {
+
         }
 
         #endregion
