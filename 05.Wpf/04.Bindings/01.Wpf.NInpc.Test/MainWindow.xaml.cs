@@ -283,8 +283,14 @@ namespace Wpf.NInpc.Test
         // execute time: 10+ to 33+ ms @10000 items
         public int Id 
         {
-            get { return _.Get<int>("Id");  }
-            set { _.Set<int>("Id", value); }
+            get 
+            { 
+                return _.Get<int>("Id");  
+            }
+            set 
+            { 
+                _.Set<int>("Id", value); 
+            }
         }
 
         #endregion
