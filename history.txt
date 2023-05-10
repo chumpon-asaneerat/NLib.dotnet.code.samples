@@ -22,8 +22,9 @@ NLib.Net code samples  #54
 NLib.Net code samples  #53
 - 
 
+[commited]
 NLib.Net code samples  #52
-- 
+- Add basic assemblies in References folder (not used yet).
 
 [commited]
 NLib.Net code samples  #51
