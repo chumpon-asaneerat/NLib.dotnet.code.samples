@@ -22,6 +22,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using static Wpf.NInpc.Test.NProperties;
 
 #endregion
 
@@ -187,12 +189,11 @@ namespace Wpf.NInpc.Test
         #endregion
     }
 
-
     public class Demo : INotifyPropertyChanged
     {
         #region Internal Variables
 
-        private NProperties _ = new NProperties();
+        private NProperties _properties = new NProperties();
 
         #endregion
 
@@ -230,71 +231,30 @@ namespace Wpf.NInpc.Test
             Raise(me.Member.Name);
         }
 
-        /*
-        /// <summary>
-        /// Internal Get (Lamda function).
-        /// </summary>
-        /// <param name="selectorExpression">The Expression function.</param>
-
-        private U Get<T, U>(Expression<Func<T>> selectorExpression)
+        private T Get<T>([CallerMemberName] string propertyName = null)
         {
-            if (null == selectorExpression)
-            {
-                throw new ArgumentNullException("selectorExpression");
-                // return;
-            }
-            var me = selectorExpression.Body as MemberExpression;
+            if (string.IsNullOrEmpty(propertyName))
+                throw new ArgumentNullException(nameof(propertyName));
+            return _properties.Get<T>(propertyName);
+        }
 
-            // Nullable properties can be nested inside of a convert function
-            if (null == me)
+        private void Set<T>(T Value, 
+            Action action = null,
+            [CallerMemberName] string propertyName = null)
+        {
+            if (string.IsNullOrEmpty(propertyName))
+                throw new ArgumentNullException(nameof(propertyName));
+            if (_properties.Set<T>(propertyName, Value))
             {
-                var ue = selectorExpression.Body as UnaryExpression;
-                if (null != ue)
+                Raise(propertyName); // Raise PropertyChanged
+                if (null != action)
                 {
-                    me = ue.Operand as MemberExpression;
+                    // do some extra action.
+                    Dispatcher.CurrentDispatcher.Invoke(action); // Dispatcher
+                    //action.Call(); // NLib
                 }
             }
-
-            if (null == me)
-            {
-                throw new ArgumentException("The body must be a member expression");
-                // return;
-            }
-            return _.Get<U>(me.Member.Name);
         }
-        /// <summary>
-        /// Internal Get (Lamda function).
-        /// </summary>
-        /// <param name="selectorExpression">The Expression function.</param>
-        /// <param name="Value">The Value to set.</param>
-
-        private void Set<T, U>(Expression<Func<T>> selectorExpression, U Value)
-        {
-            if (null == selectorExpression)
-            {
-                throw new ArgumentNullException("selectorExpression");
-                // return;
-            }
-            var me = selectorExpression.Body as MemberExpression;
-
-            // Nullable properties can be nested inside of a convert function
-            if (null == me)
-            {
-                var ue = selectorExpression.Body as UnaryExpression;
-                if (null != ue)
-                {
-                    me = ue.Operand as MemberExpression;
-                }
-            }
-
-            if (null == me)
-            {
-                throw new ArgumentException("The body must be a member expression");
-                // return;
-            }
-            _.Set<U>(me.Member.Name, Value);
-        }
-        */
 
         #endregion
 
@@ -351,17 +311,13 @@ namespace Wpf.NInpc.Test
         // execute time: 70+ to 90+ ms @10000 items with raise events
         public int Id 
         {
-            get 
-            { 
-                return _.Get<int>("Id");  
-            }
+            get { return Get<int>(); }
             set 
             {
-                if (_.Set<int>("Id", value))
+                Set<int>(value, () => 
                 {
-                    Raise();
                     UpdateTime();
-                }
+                });
             }
         }
 
