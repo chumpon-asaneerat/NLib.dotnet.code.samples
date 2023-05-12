@@ -5,10 +5,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
-using System.Windows.Threading;
-//using System.Collections.Generic;
-//using System.Runtime.CompilerServices; // .NET 4.5 required.
-//using NLib;
 
 #endregion
 
