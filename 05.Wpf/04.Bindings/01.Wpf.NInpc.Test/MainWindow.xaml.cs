@@ -129,28 +129,36 @@ namespace Wpf.NInpc.Test
         {
             if (!_properties.TryGetValue(proopertyName, out var _))
             {
-                //var p = new NProperty<T>() { PropertyName = proopertyName, Value = default };
                 var p = new NProperty<T>() { Value = default };
                 _properties.Add(proopertyName, p);
             }
 
             var inst = _properties[proopertyName] as NProperty<T>;
-            return inst.Value;
+            return (null != inst) ? inst.Value : default;
         }
 
-        public void Set<T>(string proopertyName, T value)
+        public bool Set<T>(string proopertyName, T value)
         {
+            bool bChanged = false;
             if (!_properties.TryGetValue(proopertyName, out _))
             {
-                //var p = new NProperty<T>() { PropertyName = proopertyName, Value = default };
-                var p = new NProperty<T>() { Value = default };
+                var p = new NProperty<T>() { Value = value };
                 _properties.Add(proopertyName, p);
+                bChanged = true;
             }
             else
             {
                 var inst = _properties[proopertyName] as NProperty<T>;
-                inst.Value = value;
+                if (null != inst)
+                {
+                    if (!inst.Value.Equals(value))
+                    {
+                        inst.Value = value;
+                    }
+                    bChanged = true;
+                }
             }
+            return bChanged;
         }
     }
 
@@ -323,10 +331,12 @@ namespace Wpf.NInpc.Test
                 return _.Get<int>("Id");  
             }
             set 
-            { 
-                _.Set<int>("Id", value);
-                Raise();
-                UpdateTime();
+            {
+                if (_.Set<int>("Id", value))
+                {
+                    Raise();
+                    UpdateTime();
+                }
             }
         }
 
