@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,15 @@ namespace Wpf.NInpc.Test
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
+        }
+
+        #endregion
+
+        #region ListView Handlers
+
+        private void lv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            entry.DataContext = lv.SelectedItem;
         }
 
         #endregion
@@ -242,8 +252,10 @@ namespace Wpf.NInpc.Test
         /// Raise Property Changed event.
         /// </summary>
         /// <param name="propertyName">The property name.</param>
-        public void Raise(string propertyName)
+        public void Raise([CallerMemberName] string propertyName = null)
         {
+            if (string.IsNullOrEmpty(propertyName))
+                return;
             // raise event.
             PropertyChanged.Call(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -267,7 +279,6 @@ namespace Wpf.NInpc.Test
         #region Public Properties
 
         // execute time: 8+ ms @10000 items
-        /*
         private int _id = 0;
         public int Id 
         {
@@ -277,12 +288,14 @@ namespace Wpf.NInpc.Test
                 if (_id != value) 
                 {
                     _id = value;
+                    Raise();
+                    UpdateTime();
                 }
             }
         }
-        */
 
         // execute time: 10+ to 33+ ms @10000 items
+        /*
         public int Id 
         {
             get 
@@ -293,6 +306,38 @@ namespace Wpf.NInpc.Test
             { 
                 _.Set<int>("Id", value); 
             }
+        }
+        */
+
+        private string _description = string.Empty;
+        public string Description
+        {
+            get { return _description; }
+            set
+            {
+                if (_description != value)
+                {
+                    _description = value;
+                    Raise();
+                    UpdateTime();
+                }
+            }
+        }
+
+        private void UpdateTime()
+        {
+            _changeTime = DateTime.Now;
+            Raise(() => ChangeTime);
+        }
+
+        private DateTime _changeTime = DateTime.Now;
+        public string ChangeTime
+        {
+            get 
+            {
+                return _changeTime.ToString("HH:mm:ss.fff");
+            }
+            set { }
         }
 
         #endregion
@@ -316,7 +361,7 @@ namespace Wpf.NInpc.Test
 
             for (int i = 0; i < iMax; ++i)
             {
-                rets.Add(new Demo() { Id = i });
+                rets.Add(new Demo() { Id = i, Description = string.Format("Desc {0}", i) });
             }
 
             var ts = DateTime.Now - dt;

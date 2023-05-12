@@ -10,8 +10,33 @@
         Closing="Window_Closing"
         mc:Ignorable="d">
     <DockPanel LastChildFill="True">
+        <DockPanel x:Name="entry"
+                   Margin="5"
+                   LastChildFill="True"
+                   DockPanel.Dock="Right"
+                   Width="250">
+            <!--  Id  -->
+            <StackPanel Orientation="Vertical"
+                        DockPanel.Dock="Left"
+                        Margin="3"
+                        Width="50">
+                <TextBlock Text="Id:" />
+                <TextBox x:Name="txtId" Text="{Binding Id}" />
+            </StackPanel>
+            <!--  Description  -->
+            <StackPanel Orientation="Vertical"
+                        DockPanel.Dock="Left"
+                        Margin="3"
+                        Width="120">
+                <TextBlock Text="Description:" />
+                <TextBox x:Name="txtDesc" Text="{Binding Description}" />
+            </StackPanel>
+            <Grid />
+        </DockPanel>
         <ListView x:Name="lv"
+                  Margin="5"
                   ItemsSource="{Binding}"
+                  SelectionChanged="lv_SelectionChanged"
                   IsSynchronizedWithCurrentItem="True"
                   VirtualizingPanel.VirtualizationMode="Recycling"
                   VirtualizingPanel.IsVirtualizing="True"
@@ -25,6 +50,24 @@
                                     <TextBlock Width="150"
                                                Text="{Binding Id}"
                                                TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Description">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Width="200"
+                                               Text="{Binding Description}"
+                                               TextAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Updated">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Width="200"
+                                               Text="{Binding ChangeTime}"
+                                               TextAlignment="Left" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
