@@ -105,10 +105,28 @@ namespace Wpf.NInpc.Test
         abstract class NProperty { }
         class NProperty<T> : NProperty
         {
+            #region Internal Variables
+
+            private T _Value = default(T);
+            private T _Original = default(T);
+
+            #endregion
+
+            #region Public Methods
+
+            #endregion
+
             #region Public Properties
 
             /// <summary>Gets or sets Value.</summary>
-            public T Value { get; set; }
+            public T Value 
+            {
+                get { return _Value; }
+                set
+                {
+                    _Value = value;
+                }
+            }
 
             #endregion
         }
