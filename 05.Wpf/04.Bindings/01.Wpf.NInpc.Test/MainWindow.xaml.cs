@@ -102,6 +102,7 @@ namespace Wpf.NInpc.Test
     {
         #region Internal classes
 
+        /*
         abstract class NProperty : IEditableObject
         {
             /// <summary>Begin Edit.</summary>
@@ -111,7 +112,6 @@ namespace Wpf.NInpc.Test
             /// <summary>Cancel Edit.</summary>
             public abstract void CancelEdit();
         }
-
         class NProperty<T> : NProperty
         {
             #region Internal Variables
@@ -168,6 +168,18 @@ namespace Wpf.NInpc.Test
                     _Value = value;
                 }
             }
+
+            #endregion
+        }
+        */
+
+        abstract class NProperty { }
+        class NProperty<T> : NProperty
+        {
+            #region Public Properties
+
+            /// <summary>Gets or sets Value.</summary>
+            public T Value { get; set; }
 
             #endregion
         }
