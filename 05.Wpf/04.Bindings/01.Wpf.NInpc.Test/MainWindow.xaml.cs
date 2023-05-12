@@ -66,6 +66,23 @@ namespace Wpf.NInpc.Test
 
         #endregion
 
+        #region Button Handlers
+
+        private void cmdChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (null != lv.SelectedItem)
+            {
+                var item = lv.SelectedItem as Demo;
+                if (null != item)
+                {
+                    item.ResetTime();
+                    item.Raise(() => item.ChangeTime);
+                }
+            }
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void InitItems()
@@ -328,6 +345,11 @@ namespace Wpf.NInpc.Test
         {
             _changeTime = DateTime.Now;
             Raise(() => ChangeTime);
+        }
+
+        public void ResetTime()
+        {
+            _changeTime = DateTime.MinValue;
         }
 
         private DateTime _changeTime = DateTime.Now;

@@ -15,6 +15,15 @@
                    LastChildFill="True"
                    DockPanel.Dock="Right"
                    Width="250">
+            <!--  Buttons  -->
+            <StackPanel Orientation="Horizontal"
+                        DockPanel.Dock="Bottom"
+                        Margin="3">
+                <Button x:Name="cmdChange"
+                        Content="Change"
+                        Width="80"
+                        Click="cmdChange_Click" />
+            </StackPanel>
             <!--  Id  -->
             <StackPanel Orientation="Vertical"
                         DockPanel.Dock="Left"
