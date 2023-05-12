@@ -25,8 +25,9 @@ NLib.Net code samples  #73
 NLib.Net code samples  #72
 - 
 
+[commited]
 NLib.Net code samples  #71
-- 
+- Update NInpc class (NLib.Utils) #1.
 
 [commited]
 NLib.Net code samples  #70
