@@ -3,6 +3,7 @@
 using NLib;
 using NLib.Services;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -95,71 +96,95 @@ namespace Wpf.NInpc.Test
         #endregion
     }
 
-    public abstract class NProperty
-    {
-        /*
-        protected virtual object GetValue() { return null; }
-        protected virtual void SetValue(object value) { }
-        public override int GetHashCode()
-        {
-            return string.Format("{0}", PropertyName).GetHashCode();
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (null == obj)
-                return false;
-            return obj.GetHashCode() == this.GetHashCode();
-        }
-
-        public string PropertyName { get; set; }
-        */
-    }
-
-    public class NProperty<T> : NProperty
-    {
-        public T Value { get; set; }
-    }
-
     public class NProperties
     {
+        #region Internal classes
+
+        abstract class NProperty { }
+        class NProperty<T> : NProperty
+        {
+            #region Public Properties
+
+            /// <summary>Gets or sets Value.</summary>
+            public T Value { get; set; }
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Internal Variables
+
+        private object olock = new object();
         private Dictionary<string, NProperty> _properties = new Dictionary<string, NProperty>();
 
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Gets Value.
+        /// </summary>
+        /// <typeparam name="T">The target proeprty type.</typeparam>
+        /// <param name="proopertyName">The Property Name.</param>
+        /// <returns>Returns Property value.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public T Get<T>(string proopertyName)
         {
-            if (!_properties.TryGetValue(proopertyName, out var _))
+            if (string.IsNullOrWhiteSpace(proopertyName)) 
+                throw new ArgumentNullException(nameof(proopertyName));
+
+            lock (olock)
             {
-                var p = new NProperty<T>() { Value = default };
-                _properties.Add(proopertyName, p);
+                if (!_properties.TryGetValue(proopertyName, out var _))
+                {
+                    var p = new NProperty<T>() { Value = default };
+                    _properties.Add(proopertyName, p);
+                }
+
+                var inst = _properties[proopertyName] as NProperty<T>;
+                return (null != inst) ? inst.Value : default;
             }
-
-            var inst = _properties[proopertyName] as NProperty<T>;
-            return (null != inst) ? inst.Value : default;
         }
-
+        /// <summary>
+        /// Set Value.
+        /// </summary>
+        /// <typeparam name="T">The target proeprty type.</typeparam>
+        /// <param name="proopertyName">The Property Name.</param>
+        /// <param name="value"></param>
+        /// <returns>Returns True if assigned value is not equal to original value.</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public bool Set<T>(string proopertyName, T value)
         {
-            bool bChanged = false;
-            if (!_properties.TryGetValue(proopertyName, out _))
+            if (string.IsNullOrWhiteSpace(proopertyName))
+                throw new ArgumentNullException(nameof(proopertyName));
+
+            lock (olock)
             {
-                var p = new NProperty<T>() { Value = value };
-                _properties.Add(proopertyName, p);
-                bChanged = true;
-            }
-            else
-            {
-                var inst = _properties[proopertyName] as NProperty<T>;
-                if (null != inst)
+                bool bChanged = false;
+                if (!_properties.TryGetValue(proopertyName, out _))
                 {
-                    if (!inst.Value.Equals(value))
-                    {
-                        inst.Value = value;
-                    }
+                    var p = new NProperty<T>() { Value = value };
+                    _properties.Add(proopertyName, p);
                     bChanged = true;
                 }
+                else
+                {
+                    var inst = _properties[proopertyName] as NProperty<T>;
+                    if (null != inst)
+                    {
+                        if (!inst.Value.Equals(value))
+                        {
+                            inst.Value = value;
+                        }
+                        bChanged = true;
+                    }
+                }
+                return bChanged;
             }
-            return bChanged;
         }
+
+        #endregion
     }
 
 
