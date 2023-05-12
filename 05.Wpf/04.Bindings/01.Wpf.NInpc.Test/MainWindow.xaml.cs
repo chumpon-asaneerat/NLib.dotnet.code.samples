@@ -101,17 +101,10 @@ namespace Wpf.NInpc.Test
     {
         #region Public Properties
 
-        // execute time: 70+ to 90+ ms @10000 items with raise events
         public int Id 
         {
             get { return Get<int>(); }
-            set 
-            {
-                Set<int>(value, () => 
-                {
-                    UpdateTime();
-                });
-            }
+            set { Set(value); }
         }
 
         public string Description
@@ -119,7 +112,7 @@ namespace Wpf.NInpc.Test
             get { return Get<string>(); }
             set
             {
-                Set<string>(value, () =>
+                Set(value, () =>
                 {
                     UpdateTime();
                 });
