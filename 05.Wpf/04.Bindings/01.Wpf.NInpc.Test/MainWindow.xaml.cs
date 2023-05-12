@@ -97,9 +97,9 @@ namespace Wpf.NInpc.Test
 
     public abstract class NProperty
     {
-        protected abstract object GetValue();
-        protected abstract void SetValue(object value);
-
+        /*
+        protected virtual object GetValue() { return null; }
+        protected virtual void SetValue(object value) { }
         public override int GetHashCode()
         {
             return string.Format("{0}", PropertyName).GetHashCode();
@@ -113,13 +113,11 @@ namespace Wpf.NInpc.Test
         }
 
         public string PropertyName { get; set; }
+        */
     }
 
     public class NProperty<T> : NProperty
     {
-        protected override object GetValue() { return Value; }
-        protected override void SetValue(object value) { Value = (T)value; }
-
         public T Value { get; set; }
     }
 
@@ -129,9 +127,11 @@ namespace Wpf.NInpc.Test
 
         public T Get<T>(string proopertyName)
         {
-            if (!_properties.ContainsKey(proopertyName))
+            if (!_properties.TryGetValue(proopertyName, out var _))
             {
-                _properties.Add(proopertyName, new NProperty<T>());
+                //var p = new NProperty<T>() { PropertyName = proopertyName, Value = default };
+                var p = new NProperty<T>() { Value = default };
+                _properties.Add(proopertyName, p);
             }
 
             var inst = _properties[proopertyName] as NProperty<T>;
@@ -140,9 +140,11 @@ namespace Wpf.NInpc.Test
 
         public void Set<T>(string proopertyName, T value)
         {
-            if (!_properties.ContainsKey(proopertyName))
+            if (!_properties.TryGetValue(proopertyName, out _))
             {
-                _properties.Add(proopertyName, new NProperty<T>() { Value = value });
+                //var p = new NProperty<T>() { PropertyName = proopertyName, Value = default };
+                var p = new NProperty<T>() { Value = default };
+                _properties.Add(proopertyName, p);
             }
             else
             {
@@ -295,7 +297,8 @@ namespace Wpf.NInpc.Test
 
         #region Public Properties
 
-        // execute time: 8+ ms @10000 items
+        // 50+ to 70+ ms @10000 items with raise events
+        /*
         private int _id = 0;
         public int Id 
         {
@@ -310,9 +313,9 @@ namespace Wpf.NInpc.Test
                 }
             }
         }
+        */
 
-        // execute time: 10+ to 33+ ms @10000 items
-        /*
+        // execute time: 70+ to 90+ ms @10000 items with raise events
         public int Id 
         {
             get 
@@ -321,10 +324,11 @@ namespace Wpf.NInpc.Test
             }
             set 
             { 
-                _.Set<int>("Id", value); 
+                _.Set<int>("Id", value);
+                Raise();
+                UpdateTime();
             }
         }
-        */
 
         private string _description = string.Empty;
         public string Description
