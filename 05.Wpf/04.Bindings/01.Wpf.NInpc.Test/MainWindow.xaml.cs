@@ -102,17 +102,58 @@ namespace Wpf.NInpc.Test
     {
         #region Internal classes
 
-        abstract class NProperty { }
+        abstract class NProperty : IEditableObject
+        {
+            /// <summary>Begin Edit.</summary>
+            public abstract void BeginEdit();
+            /// <summary>End Edit.</summary>
+            public abstract void EndEdit();
+            /// <summary>Cancel Edit.</summary>
+            public abstract void CancelEdit();
+        }
+
         class NProperty<T> : NProperty
         {
             #region Internal Variables
 
-            private T _Value = default(T);
-            private T _Original = default(T);
+            private bool _isEditing = false;
+            private T _Value = default;
+            private T _Original = default;
 
             #endregion
 
             #region Public Methods
+
+            /// <summary>
+            /// Begin Edit.
+            /// </summary>
+            public override void BeginEdit()
+            {
+                _isEditing = true;
+                _Original = _Value;
+            }
+            /// <summary>
+            /// End Edit.
+            /// </summary>
+            public override void EndEdit()
+            {
+                if (_isEditing)
+                {
+                    _Original = _Value;
+                }
+                _isEditing = false;
+            }
+            /// <summary>
+            /// Cancel Edit.
+            /// </summary>
+            public override void CancelEdit()
+            {
+                if (_isEditing)
+                {
+                    _Value = _Original;
+                }
+                _isEditing = false;
+            }
 
             #endregion
 
