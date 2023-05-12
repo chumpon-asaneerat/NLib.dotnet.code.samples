@@ -321,18 +321,15 @@ namespace Wpf.NInpc.Test
             }
         }
 
-        private string _description = string.Empty;
         public string Description
         {
-            get { return _description; }
+            get { return Get<string>(); }
             set
             {
-                if (_description != value)
+                Set<string>(value, () =>
                 {
-                    _description = value;
-                    Raise();
                     UpdateTime();
-                }
+                });
             }
         }
 
