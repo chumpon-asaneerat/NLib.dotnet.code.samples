@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows;
+using System.Windows.Controls;
 
 #endregion
 
@@ -41,8 +42,6 @@ namespace WpfMoveWindow
 
         private static void UIElementOnMouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Handled) return;
-
             var uiElement = sender as FrameworkElement;
             if (uiElement != null)
             {
@@ -61,7 +60,7 @@ namespace WpfMoveWindow
                             return;
                         }
                     }
-                    e.Handled = true;
+
                     var window = parent as Window;
                     window.DragMove();
                 }
