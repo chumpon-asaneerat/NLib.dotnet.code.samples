@@ -15,7 +15,11 @@
         <DockPanel DockPanel.Dock="Right" LastChildFill="True">
             <Border Background="Beige" Width="50"
                     local:EnableDragHelper.EnableDrag="True">
-                
+                <DockPanel LastChildFill="True">
+                    <Grid DockPanel.Dock="Top" Height="30" />
+                    <TextBox DockPanel.Dock="Top" />
+                    <Grid />
+                </DockPanel>
             </Border>
         </DockPanel>
         <DockPanel>

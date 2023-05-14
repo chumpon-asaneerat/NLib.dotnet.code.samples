@@ -23,11 +23,12 @@ namespace WpfMoveWindow
 
         private static void OnLoaded(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
-            var uiElement = dependencyObject as UIElement;
+            var uiElement = dependencyObject as FrameworkElement;
             if (uiElement == null || (dependencyPropertyChangedEventArgs.NewValue is bool) == false)
             {
                 return;
             }
+            //uiElement.Cursor = Cursors.Hand;
             if ((bool)dependencyPropertyChangedEventArgs.NewValue == true)
             {
                 uiElement.MouseMove += UIElementOnMouseMove;
@@ -38,12 +39,14 @@ namespace WpfMoveWindow
             }
         }
 
-        private static void UIElementOnMouseMove(object sender, MouseEventArgs mouseEventArgs)
+        private static void UIElementOnMouseMove(object sender, MouseEventArgs e)
         {
-            var uiElement = sender as UIElement;
+            if (e.Handled) return;
+
+            var uiElement = sender as FrameworkElement;
             if (uiElement != null)
             {
-                if (mouseEventArgs.LeftButton == MouseButtonState.Pressed)
+                if (e.LeftButton == MouseButtonState.Pressed)
                 {
                     DependencyObject parent = uiElement;
                     int avoidInfiniteLoop = 0;
@@ -58,6 +61,7 @@ namespace WpfMoveWindow
                             return;
                         }
                     }
+                    e.Handled = true;
                     var window = parent as Window;
                     window.DragMove();
                 }

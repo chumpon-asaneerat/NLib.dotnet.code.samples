@@ -7,8 +7,9 @@ NLib.Net code samples  #79
 NLib.Net code samples  #78
 - 
 
+[commited]
 NLib.Net code samples  #77
-- 
+- Update WpfMoveWindow project #2.
 
 [commited]
 NLib.Net code samples  #76
