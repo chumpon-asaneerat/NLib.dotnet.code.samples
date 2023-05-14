@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Bindings", "04.Bindings"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Wpf.NInpc.Test", "05.Wpf\04.Bindings\01.Wpf.NInpc.Test\01.Wpf.NInpc.Test.csproj", "{09305405-AF78-4A34-AF5B-7CD42AC034B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.WpfMoveWindow", "05.Wpf\01.Behavior\03.WpfMoveWindow\03.WpfMoveWindow.csproj", "{8C25842F-1C2B-431F-B78E-8B6B3825EE3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{09305405-AF78-4A34-AF5B-7CD42AC034B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09305405-AF78-4A34-AF5B-7CD42AC034B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09305405-AF78-4A34-AF5B-7CD42AC034B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C25842F-1C2B-431F-B78E-8B6B3825EE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C25842F-1C2B-431F-B78E-8B6B3825EE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C25842F-1C2B-431F-B78E-8B6B3825EE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C25842F-1C2B-431F-B78E-8B6B3825EE3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{238FC7FF-5234-4FEB-8265-22B8E8F01B0C} = {6A0842E6-475D-420A-8E98-656B0D6F0292}
 		{7142865B-DBC2-4492-BF65-F49200F82F69} = {B8F4930F-864B-432C-880F-A9A73F566B97}
 		{09305405-AF78-4A34-AF5B-7CD42AC034B9} = {7142865B-DBC2-4492-BF65-F49200F82F69}
+		{8C25842F-1C2B-431F-B78E-8B6B3825EE3A} = {8CBA93D0-C93E-451C-AB3A-3335794F800E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11E84371-DE6B-4B78-BB92-B71EECC46630}

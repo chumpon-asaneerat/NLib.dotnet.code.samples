@@ -13,8 +13,9 @@ NLib.Net code samples  #77
 NLib.Net code samples  #76
 - 
 
+[commited]
 NLib.Net code samples  #75
-- 
+- Add WpfMoveWindow project.
 
 [commited]
 NLib.Net code samples  #74
