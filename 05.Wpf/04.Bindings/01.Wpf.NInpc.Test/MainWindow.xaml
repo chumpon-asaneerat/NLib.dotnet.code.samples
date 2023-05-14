@@ -24,22 +24,38 @@
                         Width="80"
                         Click="cmdChange_Click" />
             </StackPanel>
-            <!--  Id  -->
-            <StackPanel Orientation="Vertical"
+            <DockPanel DockPanel.Dock="Top"
+                       LastChildFill="True">
+                <!--  Id  -->
+                <StackPanel Orientation="Vertical"
                         DockPanel.Dock="Left"
                         Margin="3"
                         Width="50">
-                <TextBlock Text="Id:" />
-                <TextBox x:Name="txtId" Text="{Binding Id}" />
-            </StackPanel>
-            <!--  Description  -->
-            <StackPanel Orientation="Vertical"
+                    <TextBlock Text="Id:" />
+                    <TextBox x:Name="txtId" Text="{Binding Id}" />
+                </StackPanel>
+                <!--  Description  -->
+                <StackPanel Orientation="Vertical"
                         DockPanel.Dock="Left"
                         Margin="3"
                         Width="120">
-                <TextBlock Text="Description:" />
-                <TextBox x:Name="txtDesc" Text="{Binding Description}" />
-            </StackPanel>
+                    <TextBlock Text="Description:" />
+                    <TextBox x:Name="txtDesc" Text="{Binding Description}" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top"
+                       LastChildFill="True">
+                <!--  Received Date  -->
+                <StackPanel Orientation="Vertical"
+                        DockPanel.Dock="Left"
+                        Margin="3"
+                        Width="150">
+                    <TextBlock Text="Received Date:" />
+                    <DatePicker x:Name="txtRecvDate" SelectedDate="{Binding ReceivedDate}" />
+                </StackPanel>
+                <Grid />
+            </DockPanel>
             <Grid />
         </DockPanel>
         <ListView x:Name="lv"
@@ -58,6 +74,15 @@
                                 <DataTemplate>
                                     <TextBlock Width="150"
                                                Text="{Binding Id}"
+                                               TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Received Date">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Width="150"
+                                               Text="{Binding ReceivedDate}"
                                                TextAlignment="Center" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

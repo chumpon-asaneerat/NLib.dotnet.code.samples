@@ -107,6 +107,13 @@ namespace Wpf.NInpc.Test
             set { Set(value); }
         }
 
+        public DateTime? ReceivedDate
+        {
+            get { return Get<DateTime?>(); }
+            set { Set(value); }
+        }
+
+
         public string Description
         {
             get { return Get<string>(); }
