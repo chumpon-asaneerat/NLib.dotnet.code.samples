@@ -3,11 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMoveWindow"
         Title="MainWindow" 
         Height="450" 
         Width="800"
         mc:Ignorable="d">
-    <Grid>
-        
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+            <Grid />
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Right" LastChildFill="True">
+            <Border Background="Beige" Width="50"
+                    local:EnableDragHelper.EnableDrag="True">
+                
+            </Border>
+        </DockPanel>
+        <DockPanel>
+            <Grid />
+        </DockPanel>
+    </DockPanel>
 </Window>
