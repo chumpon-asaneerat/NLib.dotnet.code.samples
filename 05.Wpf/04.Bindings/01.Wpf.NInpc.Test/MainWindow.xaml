@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:Wpf.NInpc.Test.Controls"
         Title="Wpf NInpc Test"
         Height="450"
         Width="800"
@@ -24,38 +25,28 @@
                         Width="80"
                         Click="cmdChange_Click" />
             </StackPanel>
-            <DockPanel DockPanel.Dock="Top"
-                       LastChildFill="True">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                 <!--  Id  -->
-                <StackPanel Orientation="Vertical"
-                        DockPanel.Dock="Left"
-                        Margin="3"
-                        Width="50">
-                    <TextBlock Text="Id:" />
-                    <TextBox x:Name="txtId" Text="{Binding Id}" />
-                </StackPanel>
+                <ctrl:TextBoxField DockPanel.Dock="Left"
+                                   Margin="3"
+                                   Width="50"
+                                   Caption="Id"
+                                   Value="{Binding Id}" />
                 <!--  Description  -->
-                <StackPanel Orientation="Vertical"
-                        DockPanel.Dock="Left"
-                        Margin="3"
-                        Width="120">
-                    <TextBlock Text="Description:" />
-                    <TextBox x:Name="txtDesc" Text="{Binding Description}" />
-                </StackPanel>
-                <Grid />
-            </DockPanel>
-            <DockPanel DockPanel.Dock="Top"
-                       LastChildFill="True">
+                <ctrl:TextBoxField DockPanel.Dock="Left"
+                                   Margin="3"
+                                   Width="120"
+                                   Caption="Description"
+                                   Value="{Binding Description}" />
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                 <!--  Received Date  -->
-                <StackPanel Orientation="Vertical"
-                        DockPanel.Dock="Left"
-                        Margin="3"
-                        Width="150">
-                    <TextBlock Text="Received Date:" />
-                    <DatePicker x:Name="txtRecvDate" SelectedDate="{Binding ReceivedDate}" />
-                </StackPanel>
-                <Grid />
-            </DockPanel>
+                <ctrl:DatePickerField DockPanel.Dock="Left"
+                                      Margin="3"
+                                      Width="150"
+                                      Caption="Received Date"
+                                      Value="{Binding ReceivedDate}" />
+            </StackPanel>
             <Grid />
         </DockPanel>
         <ListView x:Name="lv"
