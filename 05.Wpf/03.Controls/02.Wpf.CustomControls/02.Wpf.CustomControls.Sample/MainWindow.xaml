@@ -9,7 +9,14 @@
         Height="450"
         Width="800"
         Loaded="Window_Loaded">
-    <Grid>
-        <ctrl:WrapListBox x:Name="ctrl1" />
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <TabControl>
+            <TabItem Header="Wrap List Box">
+                <ctrl:WrapListBox x:Name="ctrl1" />
+            </TabItem>
+            <TabItem Header="Wrap List Box (No highlight)">
+                <ctrl:WrapListBoxNoHighlight x:Name="ctrl2" />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>

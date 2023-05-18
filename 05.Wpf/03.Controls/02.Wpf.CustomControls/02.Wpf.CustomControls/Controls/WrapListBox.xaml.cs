@@ -26,32 +26,25 @@ namespace Wpf.Controls
     /// </summary>
     public partial class WrapListBox : UserControl
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public WrapListBox()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Public Methods
+
         public void Setup()
         {
-            List<Product> products = new List<Product>()
-            {
-                new Product() { Name = "Notebook" },
-                new Product() { Name = "PC" },
-                new Product() { Name = "Printer" },
-                new Product() { Name = "Camera" },
-                new Product() { Name = "Microphone" },
-                new Product() { Name = "Cable" },
-                new Product() { Name = "Monitor" }
-            };
-            lst.ItemsSource = products;
+            lst.ItemsSource = Product.Gets();
         }
-    }
-}
 
-namespace Wpf.Models
-{
-    public class Product
-    {
-        public string Name { get; set; }
+        #endregion
     }
 }

@@ -17,40 +17,32 @@ using System.Windows.Shapes;
 
 #endregion
 
+using Wpf.Models;
+
 namespace Wpf.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WrapListBoxNoHighlight.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WrapListBoxNoHighlight : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public MainWindow()
+        public WrapListBoxNoHighlight()
         {
             InitializeComponent();
         }
 
         #endregion
 
-        #region Loaded
+        #region Public Methods
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void Setup()
         {
-            Init();
-        }
-
-        #endregion
-
-        #region Private Methods
-
-        private void Init()
-        {
-            ctrl1.Setup();
-            ctrl2.Setup();
+            lst.ItemsSource = Product.Gets();
         }
 
         #endregion
