@@ -22,8 +22,9 @@ NLib.Net code samples  #84
 NLib.Net code samples  #83
 - 
 
+[commited]
 NLib.Net code samples  #82
-- 
+- Add Wpf Custom Controls prject.
 
 [commited]
 NLib.Net code samples  #81
