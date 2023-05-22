@@ -22,6 +22,20 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Wpf.Controls
 {
+    // NOTE: UserControl => cannot set Name attribute
+    //
+    // Comment1:
+    // --------------------------------------------------------------------------------------------------
+    // As the error indicates the Name property of the Button can't be set due to scope problems.
+    // We simply can't set the Name property of the child elements of the usercontrols.
+    // Please check out this similar thread.
+    // --------------------------------------------------------------------------------------------------
+    // Comment2:
+    // Unfortunately, You cannot set Name attribute on the children of the control which has been
+    // created as UserControl. Instead, implement your MultiPanel as lookless control. If you do not know,
+    // it consists of the control template in MultiPanel.generic.xaml and the control behaviour
+    // implemented as class ...
+
     /// <summary>
     /// Interaction logic for NUserPage.xaml
     /// </summary>
