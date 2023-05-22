@@ -7,8 +7,9 @@ NLib.Net code samples  #89
 NLib.Net code samples  #88
 - 
 
+[commited]
 NLib.Net code samples  #87
-- 
+- Update Wpf Custom Controls prject #5.
 
 [commited]
 NLib.Net code samples  #86
