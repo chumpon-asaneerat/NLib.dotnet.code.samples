@@ -53,6 +53,9 @@
       <DependentUpon>WrapListBoxNoHighlight.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs" />
+    <Compile Include="NUserPage.xaml.cs">
+      <DependentUpon>NUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\WrapListBoxNoHighlight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
