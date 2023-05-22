@@ -11,6 +11,18 @@
         Loaded="Window_Loaded">
     <DockPanel LastChildFill="True">
         <TabControl>
+            <TabItem Header="NPage (UserControl">
+                <ctrl:NUserPage x:Name="page1">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal"
+                                    DockPanel.Dock="Top">
+                            <Button Margin="5,0" Content="Button1" Width="100" />
+                            <Button Margin="5,0" Content="Button2" Width="100" />
+                        </StackPanel>
+                        <Grid />
+                    </DockPanel>
+                </ctrl:NUserPage>
+            </TabItem>
             <TabItem Header="Wrap List Box">
                 <ctrl:WrapListBox x:Name="ctrl1" />
             </TabItem>
