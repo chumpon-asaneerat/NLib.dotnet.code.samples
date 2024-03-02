@@ -7,13 +7,13 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NLib web service (REST) common library")]
-[assembly: AssemblyDescription("The NLib web service (REST) common library")]
+[assembly: AssemblyTitle("NLib web service server (REST) common library")]
+[assembly: AssemblyDescription("The NLib web service server (REST) common library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Softbase Co., Ltd.")]
-[assembly: AssemblyProduct("The NLib web service (REST) common library")]
+[assembly: AssemblyProduct("The NLib web service server (REST) common library")]
 [assembly: AssemblyCopyright("Copyright ©Softbase Co., Ltd. 2024")]
-[assembly: AssemblyTrademark("The NLib web service (REST) common library")]
+[assembly: AssemblyTrademark("The NLib web service server (REST) common library")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
