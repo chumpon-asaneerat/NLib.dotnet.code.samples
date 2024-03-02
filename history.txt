@@ -16,8 +16,9 @@ NLib.Net code samples  #96
 NLib.Net code samples  #95
 - 
 
+[commited]
 NLib.Net code samples  #94
-- 
+- Update NLib projects - Sync code with lastest version fo DMT Rest Client #3
 
 [commited]
 NLib.Net code samples  #93

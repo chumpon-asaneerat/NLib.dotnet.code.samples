@@ -58,6 +58,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Wpf.CustomControls", "05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Wpf.CustomControls.Sample", "05.Wpf\03.Controls\02.Wpf.CustomControls\02.Wpf.CustomControls.Sample\02.Wpf.CustomControls.Sample.csproj", "{C523BB17-FAD1-4666-9E0D-EBA1D6B32394}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Rest.Common", "00.NLib\NLib.Rest.Common\NLib.Rest.Common.csproj", "{0B53507E-E0CE-42D4-AAAB-B9F67F7A463D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Rest.Client", "00.NLib\NLib.Rest.Client\NLib.Rest.Client.csproj", "{FC52043E-C45E-4B83-8AA5-DB8F57670F14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +120,14 @@ Global
 		{C523BB17-FAD1-4666-9E0D-EBA1D6B32394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C523BB17-FAD1-4666-9E0D-EBA1D6B32394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C523BB17-FAD1-4666-9E0D-EBA1D6B32394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B53507E-E0CE-42D4-AAAB-B9F67F7A463D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B53507E-E0CE-42D4-AAAB-B9F67F7A463D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B53507E-E0CE-42D4-AAAB-B9F67F7A463D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B53507E-E0CE-42D4-AAAB-B9F67F7A463D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC52043E-C45E-4B83-8AA5-DB8F57670F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC52043E-C45E-4B83-8AA5-DB8F57670F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC52043E-C45E-4B83-8AA5-DB8F57670F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC52043E-C45E-4B83-8AA5-DB8F57670F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +154,8 @@ Global
 		{FDB3A770-0A16-45D7-B56D-40A69F2BE440} = {83B338EF-632C-4404-8FFF-628C1F9EAFBD}
 		{2EEB0B12-FC59-4071-952B-7B7690F214D9} = {BD6041F9-0139-4043-AF02-C786CC11AD74}
 		{C523BB17-FAD1-4666-9E0D-EBA1D6B32394} = {BD6041F9-0139-4043-AF02-C786CC11AD74}
+		{0B53507E-E0CE-42D4-AAAB-B9F67F7A463D} = {6A0842E6-475D-420A-8E98-656B0D6F0292}
+		{FC52043E-C45E-4B83-8AA5-DB8F57670F14} = {6A0842E6-475D-420A-8E98-656B0D6F0292}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11E84371-DE6B-4B78-BB92-B71EECC46630}
