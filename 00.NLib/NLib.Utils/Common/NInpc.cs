@@ -94,11 +94,18 @@ namespace NLib
                         var inst = _properties[proopertyName] as NProperty<T>;
                         if (null != inst)
                         {
-                            if (!inst.Value.Equals(value))
+                            if (null == inst.Value && value == null)
                             {
-                                inst.Value = value;
+                                bChanged = false;
                             }
-                            bChanged = true;
+                            else 
+                            {
+                                if (null == inst.Value || !inst.Value.Equals(value))
+                                {
+                                    inst.Value = value;
+                                }
+                                bChanged = true;
+                            }
                         }
                     }
                     return bChanged;

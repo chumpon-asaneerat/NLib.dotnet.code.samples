@@ -12,7 +12,8 @@ namespace NLib
     /// NSingelton class.
     /// </summary>
     /// <typeparam name="T">The target singelton class.</typeparam>
-    public class NSingelton<T> where T : class
+    public class NSingelton<T> : NInpc
+        where T : class
     {
         #region Singelton
 

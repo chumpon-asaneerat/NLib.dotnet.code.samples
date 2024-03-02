@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NLib common .NET 4.6 library for windows")]
-[assembly: AssemblyDescription("The NLib common library for .NET 4.6 platform")]
+[assembly: AssemblyTitle("NLib common .NET 4.7 library for windows")]
+[assembly: AssemblyDescription("The NLib common library for .NET 4.7 platform")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Softbase Co., Ltd.")]
-[assembly: AssemblyProduct("NLib common .NET 4.6 library for windows")]
-[assembly: AssemblyCopyright("Copyright ©Softbase Co., Ltd. 2014")]
-[assembly: AssemblyTrademark("NLib common .NET 4.6 library for windows")]
+[assembly: AssemblyProduct("NLib common .NET 4.7 library for windows")]
+[assembly: AssemblyCopyright("Copyright ©Softbase Co., Ltd. 2023")]
+[assembly: AssemblyTrademark("NLib common .NET 4.7 library for windows")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.6.4.3")]
-[assembly: AssemblyFileVersion("4.6.4.3")]
+[assembly: AssemblyVersion("4.7.0.1")]
+[assembly: AssemblyFileVersion("4.7.0.1")]

@@ -27,6 +27,8 @@ namespace NLib.Models
         RestInvalidConfig = 152,
         // Models - Common (200-210)
         ParameterIsNull = 200,
+        // Models - Common (201)
+        SendAS4Failed = 201,
         // Common Exception
         Exception = 900,
         // Unknown (999)
@@ -52,6 +54,7 @@ namespace NLib.Models
 
             // Models - common
             _msgs.Add(ErrNums.ParameterIsNull, "Parameter is null.");
+            _msgs.Add(ErrNums.SendAS4Failed, "Send to AS400 Failed.");
             // Common Exception
             _msgs.Add(ErrNums.Exception, "Exception detected.");
             // Unknown
@@ -145,6 +148,15 @@ namespace NLib.Models
         public virtual void ParameterIsNull()
         {
             var err = ErrNums.ParameterIsNull;
+            this.errors.errNum = (int)err;
+            this.errors.errMsg = ErrConsts.ErrMsg(err);
+        }
+        /// <summary>
+        /// Set Send To AS400 Failed.
+        /// </summary>
+        public virtual void SendAS400Failed()
+        {
+            var err = ErrNums.SendAS4Failed;
             this.errors.errNum = (int)err;
             this.errors.errMsg = ErrConsts.ErrMsg(err);
         }
@@ -274,6 +286,14 @@ namespace NLib.Models
         public override void UnknownError()
         {
             base.UnknownError();
+            this.data = Default();
+        }
+        /// <summary>
+        /// Set Send AS400 Failed.
+        /// </summary>
+        public override void SendAS400Failed()
+        {
+            base.SendAS400Failed();
             this.data = Default();
         }
         /// <summary>
