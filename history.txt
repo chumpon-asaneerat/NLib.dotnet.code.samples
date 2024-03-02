@@ -7,8 +7,9 @@ NLib.Net code samples  #99
 NLib.Net code samples  #98
 - 
 
+[commited]
 NLib.Net code samples  #97
-- 
+- Implements Static File Web Server App #2
 
 [commited]
 NLib.Net code samples  #96

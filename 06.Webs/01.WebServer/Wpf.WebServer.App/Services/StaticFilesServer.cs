@@ -65,7 +65,8 @@ namespace NLib.Services.RestApi
 
             // Set File Root
             string appPath = AppDomain.CurrentDomain.BaseDirectory;
-            string rootPath = Path.Combine(appPath, "www");
+            //string rootPath = Path.Combine(appPath, "www");
+            string rootPath = Path.Combine(appPath, "flutter");
             try
             {
                 if (!Directory.Exists(rootPath))
