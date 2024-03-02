@@ -1,26 +1,26 @@
 ﻿#region Using
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+
+using NLib;
 
 #endregion
 
 namespace NLib.Wpf.Controls
 {
     /// <summary>
-    /// Interaction logic for InlineButton.xaml
+    /// Interaction logic for FontAwesomeButton.xaml
     /// </summary>
-    public partial class InlineButton : UserControl
+    public partial class FontAwesomeButton : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public InlineButton()
+        public FontAwesomeButton()
         {
             InitializeComponent();
         }
@@ -29,38 +29,17 @@ namespace NLib.Wpf.Controls
 
         #region Private Methods
 
-        #region Dispatcher helper method (invoke event)
-
-        private void InvokeAction(Action action)
-        {
-            try
-            {
-                if (null == action) return;
-                if (null != Application.Current.Dispatcher)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(action);
-                }
-                else
-                {
-                    action();
-                }
-            }
-            catch { }
-        }
-
-        #endregion
-
         #region Button Handlers
 
         private void cmd_Click(object sender, RoutedEventArgs e)
         {
             if (null != Click)
             {
-                InvokeAction(new Action(() =>
+                this.InvokeAction(() =>
                 {
                     e.Source = this; // Change source.
                     Click(this, e);
-                }));
+                });
             }
         }
 
@@ -75,10 +54,10 @@ namespace NLib.Wpf.Controls
         /// <summary>
         /// The IconTypeProperty Dependency Property.
         /// </summary>
-        public static readonly DependencyProperty IconTypeProperty =
-            DependencyProperty.Register("IconType", typeof(FontAwesomeIcon), typeof(InlineButton));
+        public static readonly DependencyProperty IconTypeProperty = 
+            DependencyProperty.Register("IconType", typeof(FontAwesomeIcon), typeof(FontAwesomeButton));
         /// <summary>
-        /// Gets or sets Inline Button Icon.
+        /// Gets or sets Font Awesome Icon Type.
         /// </summary>
         public FontAwesomeIcon IconType
         {
@@ -94,7 +73,7 @@ namespace NLib.Wpf.Controls
         /// The TextProperty Dependency Property.
         /// </summary>
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(InlineButton));
+            DependencyProperty.Register("Text", typeof(string), typeof(FontAwesomeButton));
         /// <summary>
         /// Gets or sets Inline Button Text.
         /// </summary>

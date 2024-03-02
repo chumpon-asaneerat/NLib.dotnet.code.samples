@@ -27,171 +27,201 @@
 
     <!--  LOGIN  -->
     <Style x:Key="fa-login"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf084;" />
     </Style>
 
     <!--  HOME  -->
     <Style x:Key="fa-home"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf015;" />
     </Style>
     <!--  BACK  -->
     <Style x:Key="fa-goback"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf015;" />
     </Style>
     <!--  CLOSE  -->
     <Style x:Key="fa-close"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf057;" />
     </Style>
 
     <!--  OK  -->
     <Style x:Key="fa-ok"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf00c;" />
         <Setter Property="Foreground" Value="Green" />
     </Style>
     <!--  CANCEL  -->
     <Style x:Key="fa-cancel"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf00d;" />
         <Setter Property="Foreground" Value="DarkRed" />
     </Style>
+    <!--  YES  -->
+    <Style x:Key="fa-yes"
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00c;" />
+        <Setter Property="Foreground" Value="Green" />
+    </Style>
+    <!--  NO  -->
+    <Style x:Key="fa-no"
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf00d;" />
+        <Setter Property="Foreground" Value="DarkRed" />
+    </Style>
+
     <!--  PRINT  -->
     <Style x:Key="fa-print"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf02f;" />
     </Style>
     <!--  SAVE  -->
     <Style x:Key="fa-save"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf0c7;" />
         <Setter Property="Foreground" Value="DarkGreen" />
     </Style>
 
     <!--  INFO  -->
     <Style x:Key="fa-info"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf059;" />
     </Style>
 
     <!--  IMPORT  -->
     <Style x:Key="fa-import"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf56f;" />
     </Style>
     <!--  EXPORT  -->
     <Style x:Key="fa-export"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf56e;" />
     </Style>
     <!--  ADDNEW  -->
     <Style x:Key="fa-addnew"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf055;" />
     </Style>
     <!--  SEARCH  -->
     <Style x:Key="fa-search"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf002;" />
     </Style>
     <!--  REFRESH  -->
     <Style x:Key="fa-refresh"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf2f9;" />
     </Style>
     <!--  BROWSE FILE  -->
     <Style x:Key="fa-browse-file"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xe494;" />
     </Style>
     <!--  BROWSE FOLDER  -->
     <Style x:Key="fa-browse-folder"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf65e;" />
     </Style>
     <!--  SCAN  -->
     <Style x:Key="fa-scan"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf0ae;" />
+    </Style>
+
+    <!--  CUT  -->
+    <Style x:Key="fa-cut"
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c4;" />
+        <Setter Property="Foreground" Value="Black" />
     </Style>
     <!--  COPY  -->
     <Style x:Key="fa-copy"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
+        <Setter Property="Text" Value="&#xf0c5;" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <!--  PASTE  -->
+    <Style x:Key="fa-paste"
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf0ea;" />
         <Setter Property="Foreground" Value="Black" />
     </Style>
 
     <!--  START  -->
     <Style x:Key="fa-start"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf04b;" />
         <Setter Property="Foreground" Value="Green" />
     </Style>
 
     <!--  IMAGE FILE  -->
     <Style x:Key="fa-image-file"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf1c5;" />
     </Style>
     <!--  EDIT  -->
     <Style x:Key="fa-edit"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf303;" />
     </Style>
     <!--  REMOVE  -->
     <Style x:Key="fa-remove"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf2ed;" />
         <Setter Property="Foreground" Value="DarkRed" />
     </Style>
 
     <!--  GO FIRST  -->
     <Style x:Key="fa-go-first"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf049;" />
     </Style>
     <!--  GO PREV  -->
     <Style x:Key="fa-go-prev"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf048;" />
     </Style>
     <!--  GO NEXT  -->
     <Style x:Key="fa-go-next"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf051;" />
     </Style>
     <!--  GO LAST  -->
     <Style x:Key="fa-go-last"
-           TargetType="TextBlock"
-           BasedOn="{StaticResource fa-base}">
+           BasedOn="{StaticResource fa-base}"
+           TargetType="TextBlock">
         <Setter Property="Text" Value="&#xf050;" />
     </Style>
 </ResourceDictionary>

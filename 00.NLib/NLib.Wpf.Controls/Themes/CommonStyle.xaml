@@ -121,4 +121,11 @@
     <Thickness x:Key="CaptionBorderThickness">1</Thickness>
     <CornerRadius x:Key="CaptionBorderCornerRadius" PresentationOptions:Freeze="True">3</CornerRadius>
     <GridLength x:Key="CaptionHeight" PresentationOptions:Freeze="True">40</GridLength>
+
+    <SolidColorBrush x:Key="InfoMessageForeground"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlackColor}" />
+    <SolidColorBrush x:Key="ErrorMessageForeground"
+                     PresentationOptions:Freeze="True"
+                     Color="{StaticResource BlackColor}" />
 </ResourceDictionary>

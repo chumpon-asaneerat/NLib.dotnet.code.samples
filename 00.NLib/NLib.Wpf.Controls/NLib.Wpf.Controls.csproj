@@ -50,21 +50,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\InlineButton\InlineButton.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Controls\InlineButtons\FontAwesomeButton.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\NavigatorBar\NavigatorBar.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\NPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\NPageHeader.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\CommonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +67,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\Common\CommonStyle.Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Common\CommonStyle.DatePicker.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -130,6 +122,62 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Controls\NGroupMenu\NGroupMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NGroupMenu\NGroupMenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NInputs\CheckBoxEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NInputs\NComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NInputs\NDatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NInputs\NInputGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NInputs\NPasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NInputs\NTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NPage\NPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NPreForms\NPreForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NPreForms\NPreFormColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NPreForms\NPreFormHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NPreForms\NPreFormItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Controls\NPreForms\NPreFormTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,21 +188,30 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Converters\EnumBooleanConverter.cs" />
-    <Compile Include="Controls\Enums\FontAwesomeEnumFlags.cs" />
-    <Compile Include="Controls\InlineButton\InlineButton.xaml.cs">
-      <DependentUpon>InlineButton.xaml</DependentUpon>
+    <Compile Include="Controls\Converters\WatermarkAlignmentToDockConverter.cs" />
+    <Compile Include="Controls\Enums\FontAwesomeIcon.cs" />
+    <Compile Include="Controls\InlineButtons\FontAwesomeButton.xaml.cs">
+      <DependentUpon>FontAwesomeButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\NavigatorBar\NavigatorBar.xaml.cs">
-      <DependentUpon>NavigatorBar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\NavigatorBar\NavigatorButtonEvents.cs" />
-    <Compile Include="Pages\NPage.xaml.cs">
-      <DependentUpon>NPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\NPageHeader.xaml.cs">
-      <DependentUpon>NPageHeader.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Controls\NGroupMenu\NGroupMenu.cs" />
+    <Compile Include="Controls\NGroupMenu\NGroupMenuItem.cs" />
+    <Compile Include="Controls\NInputs\CheckBoxEx.cs" />
+    <Compile Include="Controls\NInputs\NComboBox.cs" />
+    <Compile Include="Controls\NInputs\NDatePicker.cs" />
+    <Compile Include="Controls\NInputs\NInputControlBase.cs" />
+    <Compile Include="Controls\NInputs\NInputGroup.cs" />
+    <Compile Include="Controls\NInputs\NPasswordBox.cs" />
+    <Compile Include="Controls\NInputs\NTextBox.cs" />
+    <Compile Include="Controls\NPreForms\NPreForm.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormColumn.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormHeader.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormItem.cs" />
+    <Compile Include="Controls\NPreForms\NPreFormTable.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\FocusOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\KeyboardOptions.cs" />
+    <Compile Include="Controls\Utils\AttachProperties\MaskTextBox.cs" />
+    <Compile Include="Pages\NPage\NPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -169,10 +226,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ExtensionMethods\WpfWindowExtensionMethods.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\FontAwesomeIconAttachProperties.cs" />
-    <Compile Include="Controls\Utils\AttachProperties\KeyboardOptionsAttachProperties.cs" />
     <Compile Include="Controls\Converters\IsLastItemConverter.cs" />
-    <Compile Include="Controls\Converters\ShowButtonsConverter.cs" />
     <Compile Include="Controls\Converters\StringToNumberConverter.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

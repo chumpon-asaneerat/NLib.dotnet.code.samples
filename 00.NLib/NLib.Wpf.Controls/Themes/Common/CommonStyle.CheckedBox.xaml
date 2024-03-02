@@ -3,6 +3,7 @@
                     xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:ctrl="clr-namespace:NLib.Wpf.Controls"
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
@@ -89,6 +90,320 @@
                         </Trigger>
                         <Trigger Property="IsChecked" Value="false">
                             <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxFocusedBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                            <Setter TargetName="CheckMark" Property="Stroke" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--  CHECK BOX STYLE  -->
+    <Style x:Key="CommonCheckBox3State" TargetType="{x:Type CheckBox}">
+        <Setter Property="IsThreeState" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FontSize" Value="18" />
+        <!--
+        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=Foreground}" />
+        -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <BulletDecorator Background="Transparent" Cursor="Hand">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border"
+                                    Width="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=FontSize}"
+                                    Height="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=FontSize}"
+                                    Margin="0,1"
+                                    Background="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=Background}"
+                                    BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=Foreground}"
+                                    BorderThickness="2"
+                                    ClipToBounds="True">
+                                <!--
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5"
+                                                      ShadowDepth="1"
+                                                      Color="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=Foreground}" />
+                                </Border.Effect>
+                                -->
+                                <Viewbox>
+                                    <Path x:Name="CheckMark"
+                                          Width="8"
+                                          Height="8"
+                                          Margin="1"
+                                          Visibility="Hidden"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Stretch="Fill"
+                                          Stroke="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=Foreground}"
+                                          StrokeEndLineCap="Round"
+                                          StrokeStartLineCap="Round"
+                                          StrokeThickness="2"
+                                          Style="{StaticResource CheckedSymbolPath}" />
+                                </Viewbox>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="5,0"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Hidden" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckMark" Property="Style" Value="{StaticResource CrossMarkPath}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckMark" Property="Style" Value="{StaticResource CheckedSymbolPath}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxFocusedBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                            <Setter TargetName="CheckMark" Property="Stroke" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  CHECK BOX STYLE (CHECKBOX EX) 2 State  -->
+    <Style x:Key="CommonCheckBoxEx2State" TargetType="{x:Type ctrl:CheckBoxEx}">
+        <Setter Property="IsThreeState" Value="False" />
+        <Setter Property="InvertCheckStateOrder" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FontSize" Value="18" />
+        <!--
+        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType=CheckBoxEx}, Path=Foreground}" />
+        -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ctrl:CheckBoxEx}">
+                    <BulletDecorator Background="Transparent" Cursor="Hand">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border"
+                                    Width="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=FontSize}"
+                                    Height="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=FontSize}"
+                                    Margin="0,1"
+                                    Background="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Background}"
+                                    BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}"
+                                    BorderThickness="2"
+                                    ClipToBounds="True">
+                                <!--
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5"
+                                                      ShadowDepth="1"
+                                                      Color="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}" />
+                                </Border.Effect>
+                                -->
+                                <Viewbox>
+                                    <Path x:Name="CheckMark"
+                                          Width="8"
+                                          Height="8"
+                                          Margin="1"
+                                          Visibility="Hidden"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Stretch="Fill"
+                                          Stroke="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}"
+                                          StrokeEndLineCap="Round"
+                                          StrokeStartLineCap="Round"
+                                          StrokeThickness="2"
+                                          Style="{StaticResource CheckedSymbolPath}" />
+                                </Viewbox>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="5,0"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <!--
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        -->
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxFocusedBorderBrush}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                            <Setter TargetName="CheckMark" Property="Stroke" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  CHECK BOX STYLE (CHECKBOX EX) 2 State (Cross) -->
+    <Style x:Key="CommonCheckBoxEx2StateCross" TargetType="{x:Type ctrl:CheckBoxEx}">
+        <Setter Property="IsThreeState" Value="False" />
+        <Setter Property="InvertCheckStateOrder" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FontSize" Value="18" />
+        <!--
+        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType=CheckBoxEx}, Path=Foreground}" />
+        -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ctrl:CheckBoxEx}">
+                    <BulletDecorator Background="Transparent" Cursor="Hand">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border"
+                                    Width="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=FontSize}"
+                                    Height="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=FontSize}"
+                                    Margin="0,1"
+                                    Background="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Background}"
+                                    BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}"
+                                    BorderThickness="2"
+                                    ClipToBounds="True">
+                                <!--
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5"
+                                                      ShadowDepth="1"
+                                                      Color="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}" />
+                                </Border.Effect>
+                                -->
+                                <Viewbox>
+                                    <Path x:Name="CheckMark"
+                                          Width="8"
+                                          Height="8"
+                                          Margin="1"
+                                          Visibility="Hidden"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Stretch="Fill"
+                                          Stroke="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}"
+                                          StrokeEndLineCap="Round"
+                                          StrokeStartLineCap="Round"
+                                          StrokeThickness="2"
+                                          Style="{StaticResource CrossMarkPath}" />
+                                </Viewbox>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="5,0"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <!--
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        -->
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxFocusedBorderBrush}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                            <Setter TargetName="CheckMark" Property="Stroke" Value="{DynamicResource CheckBoxDisableBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  CHECK BOX STYLE (CHECKBOX EX) 3 State  -->
+    <Style x:Key="CommonCheckBoxEx3State" TargetType="{x:Type ctrl:CheckBoxEx}">
+        <Setter Property="IsThreeState" Value="True" />
+        <Setter Property="InvertCheckStateOrder" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FontSize" Value="18" />
+        <!--
+        <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource AncestorType=CheckBoxEx}, Path=Foreground}" />
+        -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ctrl:CheckBoxEx}">
+                    <BulletDecorator Background="Transparent" Cursor="Hand">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border"
+                                    Width="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=FontSize}"
+                                    Height="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=FontSize}"
+                                    Margin="0,1"
+                                    Background="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Background}"
+                                    BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}"
+                                    BorderThickness="2"
+                                    ClipToBounds="True">
+                                <!--
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5"
+                                                      ShadowDepth="1"
+                                                      Color="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}" />
+                                </Border.Effect>
+                                -->
+                                <Viewbox>
+                                    <Path x:Name="CheckMark"
+                                          Width="8"
+                                          Height="8"
+                                          Margin="1"
+                                          Visibility="Hidden"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Stretch="Fill"
+                                          Stroke="{Binding RelativeSource={RelativeSource AncestorType=ctrl:CheckBoxEx}, Path=Foreground}"
+                                          StrokeEndLineCap="Round"
+                                          StrokeStartLineCap="Round"
+                                          StrokeThickness="2"
+                                          Style="{StaticResource CheckedSymbolPath}" />
+                                </Viewbox>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="5,0"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Hidden" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckMark" Property="Style" Value="{StaticResource CrossMarkPath}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="CheckMark" Property="Style" Value="{StaticResource CheckedSymbolPath}" />
                         </Trigger>
                         <Trigger Property="IsFocused" Value="true">
                             <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxFocusedBorderBrush}" />
