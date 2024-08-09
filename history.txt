@@ -4,8 +4,11 @@ NLib.Net code samples  #100
 NLib.Net code samples  #99
 - 
 
+[commited]
 NLib.Net code samples  #98
-- 
+- Update NInpc class 
+  - fixed bug in IsLock preoprties.
+  - add supports Type Enable/Disable Notify
 
 [commited]
 NLib.Net code samples  #97
